@@ -198,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253574929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.52, y: 10.43, z: 0}
+  m_LocalPosition: {x: 6.14, y: 10.43, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 814240498}
   - component: {fileID: 814240499}
   m_Layer: 0
-  m_Name: attack
+  m_Name: atack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   rotator: {fileID: 1394238616}
   chaser: {fileID: 1394238615}
   maxDistanceToPlayer: 4
-  minDistanceToPlayer: 1.7
+  minDistanceToPlayer: 2
   chaseState: {fileID: 1911424700}
   damage: 5
   attackDelay: 2
@@ -562,7 +562,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 725c9f8d5172d384ba41bd52c13f9d3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3e45c72a62441841aead15dace4c7e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -581,8 +581,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394238609}
   m_LocalRotation: {x: 0, y: 0.010210007, z: 0, w: 0.9999479}
-  m_LocalPosition: {x: -1.7, y: 6.09, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: -1.7, y: 6.643, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 301019302}
   m_Father: {fileID: 0}
@@ -642,18 +642,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.15, y: 19.2}
+    oldSize: {x: 10, y: 10}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.15, y: 19.2}
+  m_Size: {x: 6.33, y: 11.48}
   m_EdgeRadius: 0
 --- !u!114 &1394238615
 MonoBehaviour:
