@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[System.Serializable]
+public class UnityFloatEvent : UnityEvent<float>{}
+
 public class Health : MonoBehaviour
 {
     public UnityEvent OnDie;
-    public UnityEvent OnChange;
+    public UnityFloatEvent OnChange;
 
-    private float value = 100;
-    private float max = 100;
+    [SerializeField]
+    private float value, max = 100;
 
 
     void Start()
     {
-        OnChange.Invoke();
+        OnChange.Invoke(value);
     }
 
     public void Heal(float input)
     {
         value = Mathf.Min(value + input, max);
-        OnChange.Invoke();
+        OnChange.Invoke(value);
     }
 
     public void Damage(float input) //todo: bool ignore damage reduction
     {
         value -= input;
         //todo: damage reduction
-        OnChange.Invoke();
+        OnChange.Invoke(value);
 
         if (value < 0)
         {

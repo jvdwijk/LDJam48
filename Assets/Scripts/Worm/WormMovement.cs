@@ -12,15 +12,10 @@ public class WormMovement : MonoBehaviour
     [SerializeField]
     private float rotateSpeed = 10;
 
+
     private void Start() {
         worm = GetComponent<Transform>();
         wormRigidBody = GetComponent<Rigidbody2D>();
-    }
-
-    // Should get called by UnityEvent OnRunStart.
-    public void StartMoving()
-    {
-
     }
 
     private void Update()
@@ -31,7 +26,7 @@ public class WormMovement : MonoBehaviour
         {
             float currentRotation = worm.localRotation.z;
 
-            worm.Rotate(0, 0, horizontalAxis * rotateSpeed / 10);
+            worm.Rotate(0, 0, horizontalAxis * rotateSpeed * Time.deltaTime);
 
         }
 

@@ -18,9 +18,10 @@ public class BodyManager : MonoBehaviour
     private List<BodyMovement> middleParts = new List<BodyMovement>();
 
     // Should be called on
-    public void CheckParts(int health)
+    public void CheckParts(float health)
     {
-        int chunks = health / healthChunk;
+        print(health);
+        int chunks = (int) health / healthChunk;
         int neededParts = chunks - middleParts.Count;
         if (neededParts == 0) return;
         if (neededParts > 0) AddParts(neededParts);

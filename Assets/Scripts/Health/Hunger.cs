@@ -7,6 +7,11 @@ public class Hunger : MonoBehaviour
     private float hungerRate = 1;
     private Health health;
 
+    private void Start()
+    {
+        health = GetComponent<Health>();
+    }
+
     void Update()
     {
         health.Damage(hungerRate * Time.deltaTime); //damage over time
