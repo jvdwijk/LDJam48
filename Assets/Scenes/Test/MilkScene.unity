@@ -511,12 +511,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1767049686, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: value
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8363457578460405436, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e06456291ea65724b8d35977b6bd64c5, type: 3}
+      objectReference: {fileID: 21300000, guid: f669366018310114ea1f254cd48a5cbc, type: 3}
+    - target: {fileID: 8363457578987315896, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: wormSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8363457578987315897, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -576,6 +580,6 @@ PrefabInstance:
     - target: {fileID: 8363457579741324842, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e6a80d42e9ba926498f5030b9f19ff19, type: 3}
+      objectReference: {fileID: 21300000, guid: 312fcae718efb1b4a923d4c051edf1c6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
