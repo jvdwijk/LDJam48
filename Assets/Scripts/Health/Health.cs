@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    UnityEvent OnDie;
+    private UnityEvent OnDie;
 
     private float value = 100;
     private float max = 100;
