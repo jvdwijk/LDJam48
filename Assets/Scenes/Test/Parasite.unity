@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 253574931}
   - component: {fileID: 253574930}
   - component: {fileID: 253574933}
+  - component: {fileID: 253574934}
   m_Layer: 31
   m_Name: GameObject
   m_TagString: Untagged
@@ -166,7 +167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
 --- !u!50 &253574931
 Rigidbody2D:
@@ -197,8 +198,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253574929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.13, y: 8.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.52, y: 10.43, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -254,6 +255,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &253574934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253574929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d61a58ce1e79b4c9abbe313a0aa2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &301019301
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +303,7 @@ Transform:
   m_Children:
   - {fileID: 1370708415}
   - {fileID: 1911424699}
+  - {fileID: 814240498}
   m_Father: {fileID: 1394238611}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -300,6 +320,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 1370708416}
+--- !u!1 &814240497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814240498}
+  - component: {fileID: 814240499}
+  m_Layer: 0
+  m_Name: attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814240498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814240497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 301019302}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &814240499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814240497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b49b4388c564a40b67fc27525ed812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 253574929}
+  rotator: {fileID: 1394238616}
+  chaser: {fileID: 1394238615}
+  maxDistanceToPlayer: 4
+  minDistanceToPlayer: 1.7
+  chaseState: {fileID: 1911424700}
+  damage: 5
+  attackDelay: 2
 --- !u!1 &844576440
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 844576440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: -4.93, y: 5.29, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -443,6 +514,7 @@ GameObject:
   - component: {fileID: 1394238613}
   - component: {fileID: 1394238614}
   - component: {fileID: 1394238615}
+  - component: {fileID: 1394238616}
   m_Layer: 0
   m_Name: Molly
   m_TagString: Untagged
@@ -596,6 +668,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &1394238616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394238609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066d8c724ab705144b1809e83aa204f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1675052698
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,4 +818,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 253574929}
   chaser: {fileID: 1394238615}
+  rotator: {fileID: 1394238616}
   maxDistanceToPlayer: 50
+  minDistanceToPlayer: 3
+  idleState: {fileID: 1370708416}
+  attackState: {fileID: 814240499}
