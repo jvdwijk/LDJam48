@@ -10,7 +10,7 @@ public class BodyMovement: MonoBehaviour
     [SerializeField]
     private float followSpeed;
 
-    private void SetUpFollow(Transform target)
+    public void SetUpFollow(Transform target)
     {
         follow = target;
     }
