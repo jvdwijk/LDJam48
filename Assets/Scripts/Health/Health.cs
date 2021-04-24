@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
 
     void Start()
     {
-        OnDie = new UnityEvent();
+        OnChange.Invoke();
     }
 
     public void Heal(float input)
@@ -28,13 +28,14 @@ public class Health : MonoBehaviour
         value -= input;
         //todo: damage reduction
         OnChange.Invoke();
+
+        if (value < 0)
+        {
+            OnDie.Invoke();
+        }
     }
 
     void Update()
     {
-        if (true)
-        {
-            OnDie.Invoke();
-        }
     }
 }
