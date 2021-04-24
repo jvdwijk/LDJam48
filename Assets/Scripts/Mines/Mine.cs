@@ -31,12 +31,13 @@ public class Mine : MonoBehaviour
 
     private void Explode()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRange);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRange); //get all neirby colliders
         foreach (var hitCollider in hitColliders)
         {
-            if(Vector3.Distance(hitCollider.transform.position, transform.position) < explosionRange && hitCollider.TryGetComponent(out Health health))
+            float distance = Vector3.Distance(hitCollider.transform.position, transform.position);
+            if (distance < explosionRange && hitCollider.TryGetComponent(out Health health)) //filter only Gameobjects within range and with the script health
             {
-                health.Damage(explosionDamage);
+                health.Damage(explosionDamage * (1 - distance / explosionRange)); //less damage the further you are from the mine
             }
         }
     }
