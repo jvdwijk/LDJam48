@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 1919721027}
   - component: {fileID: 1919721026}
   - component: {fileID: 1919721025}
+  - component: {fileID: 1919721029}
   - component: {fileID: 1919721024}
   m_Layer: 0
   m_Name: Cube
@@ -484,8 +485,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  trigger: {fileID: 1044344570}
-  triggerRange: 3
 --- !u!65 &1919721025
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -562,3 +561,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919721029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919721023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6f01c3fb1ccf747be553b22f93820e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1044344570}
+  triggerRange: 3
+  triggerDelay: 0
+  explosionRange: 0
+  explosionDamage: 0
+  timer: {fileID: 0}
