@@ -20,7 +20,6 @@ public class BodyManager : MonoBehaviour
     // Should be called on
     public void CheckParts(float health)
     {
-        print(health);
         int chunks = (int) health / healthChunk;
         int neededParts = chunks - middleParts.Count;
         if (neededParts == 0) return;
