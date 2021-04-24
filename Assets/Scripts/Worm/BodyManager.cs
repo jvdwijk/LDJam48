@@ -23,67 +23,59 @@ public class BodyManager : MonoBehaviour
 
     private bool isCheckingParts = false;
 
-    // Should be called on
     public void CheckParts(float health)
     {
-        int chunks = (int) health / healthChunk;
-        int neededParts = chunks - middleParts.Count;
-        if (isCheckingParts || neededParts == 0) return;
-
-        IEnumerator coroutine;
-        if (neededParts > 0)
-        {
-            if (health % healthChunk < chunkyWait)
-                neededParts -= 1;
-            coroutine = AddParts(neededParts);
-        }
-        else
-        {
-            coroutine = RemoveParts(Mathf.Abs(neededParts));
-        }
-
-        StartCoroutine(coroutine);
-    }
-
-    
-    private IEnumerator AddParts(int parts)
-    {
-        isCheckingParts = true;
+        if (isCheckingParts) return;
         
-        for (int i = 0; i < parts; i++)
-        {
-            BodyMovement part = Instantiate(partPrefab, tail.transform.position, Quaternion.identity).GetComponent<BodyMovement>();
-            if(middleParts.Count == 0)
-                part.SetUpFollow(head.transform);
-            else
-                part.SetUpFollow(middleParts[middleParts.Count -1].transform);
-            tail.SetUpFollow(part.transform);
-            middleParts.Add(part);
-            part.transform.SetParent(gameObject.transform);
-
-            yield return new WaitForSeconds(waitTime);
-        }
-        isCheckingParts = false;
+        IEnumerator coroutine = PartsCheck(health);
+        StartCoroutine(coroutine);       
     }
 
-    private IEnumerator RemoveParts(int parts)
+    private IEnumerator PartsCheck(float health)
     {
-        print("hello");
-        isCheckingParts = true;
-        for (int i = 0; i < parts; i++)
+       isCheckingParts = true;
+       int chunks = (int)health / healthChunk;
+       int neededParts = chunks - middleParts.Count;
+
+        while(neededParts != 0)
         {
-            if (middleParts.Count > 1)
-                tail.SetUpFollow(middleParts[middleParts.Count - 2].transform);
+            if (neededParts > 0)
+            {
+                AddPart();
+                neededParts -= 1;
+            }
             else
-                tail.SetUpFollow(head.transform);
+            {
+                neededParts += 1;
+                RemovePart();
+            }
 
-            BodyMovement removedPart = middleParts[middleParts.Count - 1];
-            middleParts.Remove(middleParts[middleParts.Count - 1]);
-            Destroy(removedPart.gameObject);
-
-            yield return new WaitForSeconds(waitTime);
+            chunks = (int)health / healthChunk;
+            neededParts = chunks - middleParts.Count;
+            yield return new WaitForSeconds(neededParts == 0 ?
+                chunkyWait : waitTime);
         }
         isCheckingParts = false;
     }
 
+    private void AddPart()
+    {
+        BodyMovement part = Instantiate(partPrefab, tail.transform.position, Quaternion.identity).GetComponent<BodyMovement>();
+        part.SetUpFollow(middleParts.Count == 0 ? 
+            head.transform : middleParts[middleParts.Count - 1].transform);
+
+        tail.SetUpFollow(part.transform);
+        middleParts.Add(part);
+        part.transform.SetParent(gameObject.transform);
+    }
+
+    private void RemovePart()
+    {
+        tail.SetUpFollow(middleParts.Count > 1 ? 
+            middleParts[middleParts.Count - 2].transform : head.transform);
+
+        BodyMovement removedPart = middleParts[middleParts.Count - 1];
+        middleParts.Remove(middleParts[middleParts.Count - 1]);
+        Destroy(removedPart.gameObject);
+    }
 }
