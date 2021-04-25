@@ -178,5 +178,6 @@ MonoBehaviour:
   wantedTag:
   - Player
   stats:
+    icon: {fileID: 21300000, guid: b0687d5a79d716c4aa1ad5999b219d35, type: 3}
     name: Rock
     price: 10

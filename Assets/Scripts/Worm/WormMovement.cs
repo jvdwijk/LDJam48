@@ -12,6 +12,18 @@ public class WormMovement : MonoBehaviour
     private float rotateSpeed = 10;
     private float speedMult = 1;
 
+    public float WormSpeed
+    {
+        get { return wormSpeed; }
+        set { wormSpeed = value; }
+    }
+
+    public float RotateSpeed
+    {
+        get { return rotateSpeed; }
+        set { rotateSpeed = value; }
+    }
+
 
     private void Start() {
         wormRigidBody = GetComponent<Rigidbody2D>();

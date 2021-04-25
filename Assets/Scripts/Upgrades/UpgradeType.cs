@@ -3,7 +3,7 @@ public enum UpgradeType
     Speed,
     TurnSpeed,
     HungerRate,
+    Health,
     ResourceSpawnRate,
-    GeorgeKevin,
-    Stealth
+    ResourceValue
 }

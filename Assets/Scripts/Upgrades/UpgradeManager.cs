@@ -7,6 +7,11 @@ public class UpgradeManager : MonoBehaviour
     [SerializeField]
     private List<Upgrade> upgrades;
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public List<Upgrade> GetUpgrades
     {
         get { return upgrades; }
