@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,10 @@ public class Portefeuille : MonoBehaviour
 
     private int currentCurrency = 0;
 
+    public event Action<int> OnCurrencyChange;
+
+    public int Currency => currentCurrency;
+
     private void Start()
     {
         currentCurrency = PlayerPrefs.GetInt(CURRENCY_PLAYER_PREF_ID, STARTING_CURRENCY);
@@ -16,12 +21,13 @@ public class Portefeuille : MonoBehaviour
 
     public void AddCurrency(int amount)
     {
-        currentCurrency += amount; 
+        currentCurrency += amount;
+        OnCurrencyChange?.Invoke(currentCurrency);
     }
 
     public void RemoveCurrency(int amout)
     {
-        currentCurrency -= amout;
+        AddCurrency(-amout);
     }
 
     private void OnDisable()

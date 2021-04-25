@@ -11,6 +11,9 @@ public class ValuableContounter : MonoBehaviour
     [SerializeField]
     private Transform valuableList;
 
+    [SerializeField]
+    private Portefeuille portefeuille;
+
     private Dictionary<string, ValuableScoreUI> scoreUIs = new Dictionary<string, ValuableScoreUI>();
     
     void Start()
@@ -29,6 +32,7 @@ public class ValuableContounter : MonoBehaviour
                 scoreUIs.Add(valuable.name, onion);
             }
 
+            portefeuille.AddCurrency(valuable.price);
             ValuableScoreUI scoreUI = scoreUIs[valuable.name];
             scoreUI.AddOne();
         }
