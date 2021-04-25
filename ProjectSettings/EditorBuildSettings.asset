@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 3118eaaad597a7041bc652a022cc7fc0
+  - enabled: 1
     path: Assets/Scenes/Test/Parasite.unity
     guid: 5895035ab21815845a5d50e3f3b975c7
   - enabled: 1
