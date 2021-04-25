@@ -8,6 +8,12 @@ public class Hunger : MonoBehaviour
     private float hungerMult = 1;
     private Health health;
 
+    public float HungerRate
+    {
+        get { return hungerRate; }
+        set { hungerRate = value; }
+    }
+
     private void Start()
     {
         health = GetComponent<Health>();

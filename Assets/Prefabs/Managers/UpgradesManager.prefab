@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2766141427258862102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2766141427258862096}
+  - component: {fileID: 2766141427258862097}
+  m_Layer: 0
+  m_Name: UpgradesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2766141427258862096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766141427258862102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7115048, y: -27.045458, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2766141427258862097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766141427258862102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3118f6f22c3226a4391407933475d64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades:
+  - title: Speed
+    type: 0
+    upgradeValues:
+    - cost: 100
+      statValue: 18
+      unlocked: 0
+    - cost: 500
+      statValue: 25
+      unlocked: 0
+    - cost: 1000
+      statValue: 30
+      unlocked: 0
+    - cost: 1500
+      statValue: 45
+      unlocked: 0
+    - cost: 3000
+      statValue: 60
+      unlocked: 0
+    - cost: 50000
+      statValue: 100
+      unlocked: 0
+  - title: Turn Speed
+    type: 1
+    upgradeValues:
+    - cost: 100
+      statValue: 90
+      unlocked: 0
+    - cost: 500
+      statValue: 110
+      unlocked: 0
+    - cost: 1000
+      statValue: 140
+      unlocked: 0
+    - cost: 1500
+      statValue: 180
+      unlocked: 0
+    - cost: 3000
+      statValue: 210
+      unlocked: 0
+    - cost: 6000
+      statValue: 300
+      unlocked: 0
+  - title: Hunger Rate
+    type: 2
+    upgradeValues:
+    - cost: 100
+      statValue: 0.95
+      unlocked: 0
+    - cost: 500
+      statValue: 0.9
+      unlocked: 0
+    - cost: 1250
+      statValue: 0.8
+      unlocked: 0
+    - cost: 3000
+      statValue: 0.65
+      unlocked: 0
+    - cost: 5000
+      statValue: 0.5
+      unlocked: 0
+  - title: Health
+    type: 3
+    upgradeValues:
+    - cost: 300
+      statValue: 20
+      unlocked: 1
+    - cost: 800
+      statValue: 50
+      unlocked: 1
+    - cost: 1500
+      statValue: 100
+      unlocked: 1
+    - cost: 4000
+      statValue: 200
+      unlocked: 1
+    - cost: 8000
+      statValue: 300
+      unlocked: 1
+  - title: Valuable spawn rate
+    type: 4
+    upgradeValues:
+    - cost: 300
+      statValue: 20
+      unlocked: 0
+  - title: Gem Value
+    type: 5
+    upgradeValues:
+    - cost: 1000
+      statValue: 1.2
+      unlocked: 1
+    - cost: 3000
+      statValue: 1.5
+      unlocked: 0
+    - cost: 6000
+      statValue: 1.5
+      unlocked: 0
+    - cost: 10000
+      statValue: 2
+      unlocked: 0

@@ -14,8 +14,14 @@ public class Health : MonoBehaviour
     [SerializeField]
     private float value, max = 100;
 
+    public float Max
+    {
+        get { return max; }
+        set { max = value; }
+    }
 
-    void Start()
+
+    private void Start()
     {
         OnChange.Invoke(value);
     }
