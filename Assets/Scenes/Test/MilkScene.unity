@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 760506026}
   - component: {fileID: 760506025}
   - component: {fileID: 760506028}
+  - component: {fileID: 760506029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -221,6 +222,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   follow: {fileID: 1709880928}
   followSpeed: 5
+--- !u!114 &760506029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760506024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b436e094b9a3e4e9ed63d658ead667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1474082396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -519,11 +532,31 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f669366018310114ea1f254cd48a5cbc, type: 3}
     - target: {fileID: 8363457578987315896, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: wormSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8363457578987315897, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363457578987315898, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363457578987315898, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363457578987315898, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363457578987315898, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363457578987315898, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8363457579462339248, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: waitTime
