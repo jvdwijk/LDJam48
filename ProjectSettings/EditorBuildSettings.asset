@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/ParasiteLoadingkies.unity
     guid: 5e4ef4620a250bb40b1d8f8b72f29fc6
+  - enabled: 1
+    path: Assets/Scenes/ScoreScreen.unity
+    guid: 9e77974a078286b4e8fe3da416228964
   m_configObjects: {}
