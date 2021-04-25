@@ -15,7 +15,7 @@ public class Hunger : MonoBehaviour
 
     void Update()
     {
-        health.Damage(hungerRate * Time.deltaTime); //damage over time
+        health.Damage(hungerRate * hungerMult * Time.deltaTime); //damage over time
         //todo: multiply damage on higher dept
         //todo: hunger reduction
     }

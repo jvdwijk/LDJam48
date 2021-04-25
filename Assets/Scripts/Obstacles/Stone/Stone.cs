@@ -9,11 +9,11 @@ public class Stone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (TryGetComponent(out Hunger hunger))
+        if (collision.TryGetComponent(out Hunger hunger))
         {
             hunger.multHunger(hungerMult);
         }
-        if (TryGetComponent(out WormMovement wormMovement))
+        if (collision.TryGetComponent(out WormMovement wormMovement))
         {
             wormMovement.multSpeed(speedMult);
         }
@@ -21,11 +21,11 @@ public class Stone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (TryGetComponent(out Hunger hunger))
+        if (collision.TryGetComponent(out Hunger hunger))
         {
             hunger.multHunger(1 / hungerMult);
         }
-        if (TryGetComponent(out WormMovement wormMovement))
+        if (collision.TryGetComponent(out WormMovement wormMovement))
         {
             wormMovement.multSpeed(1 / speedMult);
         }
