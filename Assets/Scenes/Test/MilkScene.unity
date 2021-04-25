@@ -339,6 +339,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4e5ad83820bc24aab82e9f6a274e13, type: 3}
+--- !u!114 &1609149637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3442796919610588823, guid: bbe8def365be1a24287a18966f967280, type: 3}
+  m_PrefabInstance: {fileID: 3442796918967308882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969c38aab22b3b746825472161474cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1709880928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8363457579741324821, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
@@ -644,6 +655,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[0].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[1].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[2].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[3].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[4].unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[5].upgradeValues.Array.data[0].unlocked
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2766141427258862102, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
       propertyPath: m_Name
       value: UpgradesManager
@@ -709,6 +744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeExecutor
       objectReference: {fileID: 0}
+    - target: {fileID: 3442796919610588819, guid: bbe8def365be1a24287a18966f967280, type: 3}
+      propertyPath: upgradesDictionary.Array.data[5].executor
+      value: 
+      objectReference: {fileID: 1609149637}
     - target: {fileID: 3442796919610588820, guid: bbe8def365be1a24287a18966f967280, type: 3}
       propertyPath: hunger
       value: 

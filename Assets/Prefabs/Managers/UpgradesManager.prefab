@@ -49,42 +49,78 @@ MonoBehaviour:
     upgradeValues:
     - cost: 100
       statValue: 18
-      unlocked: 1
+      unlocked: 0
     - cost: 500
-      statValue: 18
-      unlocked: 1
+      statValue: 25
+      unlocked: 0
+    - cost: 1000
+      statValue: 30
+      unlocked: 0
+    - cost: 1500
+      statValue: 45
+      unlocked: 0
+    - cost: 3000
+      statValue: 60
+      unlocked: 0
+    - cost: 50000
+      statValue: 100
+      unlocked: 0
   - title: Turn Speed
     type: 1
     upgradeValues:
     - cost: 100
       statValue: 90
-      unlocked: 1
+      unlocked: 0
     - cost: 500
       statValue: 110
-      unlocked: 1
+      unlocked: 0
+    - cost: 1000
+      statValue: 140
+      unlocked: 0
+    - cost: 1500
+      statValue: 180
+      unlocked: 0
+    - cost: 3000
+      statValue: 210
+      unlocked: 0
+    - cost: 6000
+      statValue: 300
+      unlocked: 0
   - title: Hunger Rate
     type: 2
     upgradeValues:
     - cost: 100
       statValue: 0.95
-      unlocked: 1
+      unlocked: 0
     - cost: 500
       statValue: 0.9
-      unlocked: 1
+      unlocked: 0
     - cost: 1250
       statValue: 0.8
-      unlocked: 1
+      unlocked: 0
     - cost: 3000
       statValue: 0.65
-      unlocked: 1
+      unlocked: 0
     - cost: 5000
-      statValue: 0.65
-      unlocked: 1
+      statValue: 0.5
+      unlocked: 0
   - title: Health
     type: 3
     upgradeValues:
     - cost: 300
       statValue: 20
+      unlocked: 1
+    - cost: 800
+      statValue: 50
+      unlocked: 1
+    - cost: 1500
+      statValue: 100
+      unlocked: 1
+    - cost: 4000
+      statValue: 200
+      unlocked: 1
+    - cost: 8000
+      statValue: 300
       unlocked: 1
   - title: Valuable spawn rate
     type: 4
@@ -98,9 +134,12 @@ MonoBehaviour:
     - cost: 1000
       statValue: 1.2
       unlocked: 1
-    - cost: 50000
+    - cost: 3000
+      statValue: 1.5
+      unlocked: 0
+    - cost: 6000
       statValue: 1.5
       unlocked: 0
     - cost: 10000
-      statValue: 1.5
+      statValue: 2
       unlocked: 0
