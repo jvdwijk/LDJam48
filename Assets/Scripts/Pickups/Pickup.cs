@@ -5,11 +5,11 @@ using UnityEngine;
 public abstract class Pickup : MonoBehaviour
 {
     [SerializeField]
-    private string wantedTag = "Player";
+    private List<string> wantedTag = new List<string>();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == wantedTag)
+        if (wantedTag.Contains(collision.gameObject.tag))
             OnEnter(collision);
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WormMovement : MonoBehaviour
 {
-    private Transform worm;
     private Rigidbody2D wormRigidBody;
 
     [SerializeField]
@@ -14,21 +13,38 @@ public class WormMovement : MonoBehaviour
 
 
     private void Start() {
-        worm = GetComponent<Transform>();
         wormRigidBody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        wormRigidBody.velocity = -transform.up * wormSpeed;
+
+        if (PlayerPrefs.GetInt("controllerType") == (int) ControllerTypes.Controller)
+            ControllerMovement();
+        else
+            MouseMovement();
+
+    }
+
+    private void MouseMovement()
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        Vector3 wormPosition = Camera.main.WorldToScreenPoint(transform.position);
+        float signedEngel = Vector2.SignedAngle(transform.up, wormPosition - mousePosition);
+
+        transform.Rotate(0, 0, signedEngel > 0 ? Mathf.Min(signedEngel, rotateSpeed * Time.deltaTime) 
+            : Mathf.Max(signedEngel, -rotateSpeed * Time.deltaTime));
+    }
+
+    private void ControllerMovement()
+    {
         float horizontalAxis = Input.GetAxis("Horizontal");
-        wormRigidBody.velocity = -worm.up * wormSpeed;
         if (horizontalAxis != 0)
         {
-            float currentRotation = worm.localRotation.z;
+            float currentRotation = transform.localRotation.z;
 
-            worm.Rotate(0, 0, horizontalAxis * rotateSpeed * Time.deltaTime);
-
+            transform.Rotate(0, 0, -horizontalAxis * rotateSpeed * Time.deltaTime);
         }
-
     }
 }
