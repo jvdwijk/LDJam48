@@ -22,7 +22,6 @@ public class TargetRotator : MonoBehaviour
             return;
 
         var targetAngle = Vector2.SignedAngle(Vector3.up, target.transform.position - transform.position);
-      
         var rotation = transform.rotation.eulerAngles;
         rotation.z = targetAngle;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(rotation), rotationSpeed*Time.deltaTime);

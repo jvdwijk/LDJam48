@@ -7,21 +7,19 @@ public class DistanceTrigger : MonoBehaviour
 {
     public UnityEvent OnTrigger;
     
-    private GameObject trigger;
     private float triggerRange;
 
-    
     void Update()
     {
-        if (Vector3.Distance(trigger.transform.position, transform.position) < triggerRange)//when within range trigger
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, triggerRange); //get all neirby colliders
+        foreach (var hitCollider in hitColliders)
         {
-            OnTrigger.Invoke();
+            float distance = Vector3.Distance(hitCollider.transform.position, transform.position);
+            if (hitCollider.TryGetComponent(out Health health)) //filter only Gameobjects within range and with the script health
+            {
+                OnTrigger.Invoke();
+            }
         }
-    }
-
-    public void SetTrigger(GameObject input)
-    {
-        trigger = input;
     }
 
     public void SetTriggerRange(float input)

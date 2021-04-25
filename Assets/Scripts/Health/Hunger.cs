@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hunger : MonoBehaviour
 {
     private float hungerRate = 1;
+    private float hungerMult = 1;
     private Health health;
 
     private void Start()
@@ -17,5 +18,15 @@ public class Hunger : MonoBehaviour
         health.Damage(hungerRate * Time.deltaTime); //damage over time
         //todo: multiply damage on higher dept
         //todo: hunger reduction
+    }
+
+    public void multHunger(float input)
+    {
+        hungerMult *= input;
+    }
+
+    public void resetHungerMult(float input)
+    {
+        hungerMult = 1;
     }
 }

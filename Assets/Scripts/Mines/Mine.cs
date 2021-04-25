@@ -5,23 +5,16 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     [SerializeField]
-    private GameObject trigger;
-    [SerializeField]
     private float triggerRange, triggerDelay, explosionRange, explosionDamage;
     [SerializeField]
     private Timer timer;
 
+
     void Start()
     {
         DistanceTrigger dt = GetComponent<DistanceTrigger>();
-        dt.SetTrigger(trigger);
         dt.SetTriggerRange(triggerRange);
         dt.OnTrigger.AddListener(StartTimer);
-    }
-    
-    void Update()
-    {
-        
     }
 
     private void StartTimer()
