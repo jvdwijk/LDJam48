@@ -10,6 +10,7 @@ public class WormMovement : MonoBehaviour
     private float wormSpeed = 10;
     [SerializeField]
     private float rotateSpeed = 10;
+    private float speedMult = 1;
 
 
     private void Start() {
@@ -18,7 +19,7 @@ public class WormMovement : MonoBehaviour
 
     private void Update()
     {
-        wormRigidBody.velocity = -transform.up * wormSpeed;
+        wormRigidBody.velocity = -transform.up * wormSpeed * speedMult;
 
         if (PlayerPrefs.GetInt("controllerType") == (int) ControllerTypes.Controller)
             ControllerMovement();
@@ -46,5 +47,15 @@ public class WormMovement : MonoBehaviour
 
             transform.Rotate(0, 0, -horizontalAxis * rotateSpeed * Time.deltaTime);
         }
+    }
+
+    public void multSpeed(float input)
+    {
+        speedMult *= input;
+    }
+
+    public void resetSpeedMult(float input)
+    {
+        speedMult = 1;
     }
 }
