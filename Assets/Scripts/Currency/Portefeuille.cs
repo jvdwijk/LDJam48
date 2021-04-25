@@ -14,7 +14,7 @@ public class Portefeuille : MonoBehaviour
 
     public int Currency => currentCurrency;
 
-    private void Start()
+    private void Awake()
     {
         currentCurrency = PlayerPrefs.GetInt(CURRENCY_PLAYER_PREF_ID, STARTING_CURRENCY);
     }
@@ -32,7 +32,7 @@ public class Portefeuille : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerPrefs.DeleteKey(CURRENCY_PLAYER_PREF_ID);
+        PlayerPrefs.SetInt(CURRENCY_PLAYER_PREF_ID, Currency);
     }
 
 }
