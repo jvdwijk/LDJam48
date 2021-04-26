@@ -33,7 +33,6 @@ public class Mine : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRange); //get all neirby colliders
         foreach (var hitCollider in hitColliders)
         {
-            print("kahga");
             float distance = Vector3.Distance(hitCollider.transform.position, transform.position);
             if (distance < explosionRange && hitCollider.TryGetComponent(out Health health)) //filter only Gameobjects within range and with the script health
             {
