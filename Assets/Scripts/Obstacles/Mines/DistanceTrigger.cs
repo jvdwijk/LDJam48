@@ -11,7 +11,7 @@ public class DistanceTrigger : MonoBehaviour
 
     void Update()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, triggerRange); //get all neirby colliders
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, triggerRange); //get all neirby colliders
         foreach (var hitCollider in hitColliders)
         {
             float distance = Vector3.Distance(hitCollider.transform.position, transform.position);

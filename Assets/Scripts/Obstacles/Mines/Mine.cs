@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mine : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class Mine : MonoBehaviour
     [SerializeField]
     private Timer timer;
 
+    [SerializeField]
+    private Sprite triggeredMine;
+    [SerializeField]
+    private SpriteRenderer mineImage;
 
     void Start()
     {
@@ -19,12 +24,13 @@ public class Mine : MonoBehaviour
 
     private void StartTimer()
     {
+        mineImage.sprite = triggeredMine;
         timer.StartTimer(triggerDelay);
     }
 
-    private void Explode()
+    public void Explode()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosionRange); //get all neirby colliders
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRange); //get all neirby colliders
         foreach (var hitCollider in hitColliders)
         {
             float distance = Vector3.Distance(hitCollider.transform.position, transform.position);
@@ -33,5 +39,6 @@ public class Mine : MonoBehaviour
                 health.Damage(explosionDamage * (1 - distance / explosionRange)); //less damage the further you are from the mine
             }
         }
+        Destroy(gameObject);
     }
 }
