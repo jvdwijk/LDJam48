@@ -1190,7 +1190,7 @@ PrefabInstance:
     - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
       propertyPath: wormHead
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1031058358}
     - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
       propertyPath: m_Enabled
       value: 1
