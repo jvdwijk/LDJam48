@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackState : State
 {
     [SerializeField]
-    private GameObject player;
+    public GameObject player;
 
     [SerializeField]
     private TargetRotator rotator;
