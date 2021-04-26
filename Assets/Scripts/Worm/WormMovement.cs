@@ -39,11 +39,11 @@ public class WormMovement : MonoBehaviour
 
         if (transform.position.x < -leftBorder)
         {
-            MoveLeft();
+            MoveRight();
         }
         else if (transform.position.x > rightBorder)
         {
-            MoveRight();
+            MoveLeft();
         }
         else if(transform.position.y > upBorder)
         {
