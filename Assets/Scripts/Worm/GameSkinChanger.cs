@@ -23,7 +23,7 @@ public class GameSkinChanger : MonoBehaviour
 
         body.OnMiddlePartAdded += SetBodypart;
 
-        SetSkin(SkinManager.Instance.Current, false);
+        SetSkin(SkinManager.Instance.Current);
         SkinManager.Instance.OnSkinChange += SetSkin;
     }
 
@@ -34,21 +34,12 @@ public class GameSkinChanger : MonoBehaviour
 
     private void SetSkin(Skin skin)
     {
-        SetSkin(skin, true);
-    }
-
-    private void SetSkin(Skin skin, bool loop)
-    {
         current = skin;
         head.sprite = current.Head;
         tail.sprite = current.Tail;
-
-        if (loop)
+        foreach (var part in body.MiddleParts)
         {
-            foreach (var part in body.MiddleParts)
-            {
-                SetBodypart(part.gameObject);
-            }
+            SetBodypart(part.gameObject);
         }
     }
 
