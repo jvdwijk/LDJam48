@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8616e0354d30ce2419b3ed079c174c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wormSpeed: 15
+  wormSpeed: 25
   rotateSpeed: 80
 --- !u!114 &7439566829835044719
 MonoBehaviour:
@@ -263,8 +263,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  value: 80
-  max: 100
+  value: 40
+  max: 50
 --- !u!61 &1704313775
 BoxCollider2D:
   m_ObjectHideFlags: 0
