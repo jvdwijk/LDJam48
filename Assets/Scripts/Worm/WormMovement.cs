@@ -37,7 +37,7 @@ public class WormMovement : MonoBehaviour
     {
         wormRigidBody.velocity = -transform.up * wormSpeed * speedMult;
 
-        if (transform.position.x > leftBorder)
+        if (transform.position.x < -leftBorder)
         {
             MoveLeft();
         }
