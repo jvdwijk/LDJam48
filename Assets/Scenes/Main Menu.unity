@@ -949,6 +949,7 @@ GameObject:
   - component: {fileID: 545286206}
   - component: {fileID: 545286205}
   - component: {fileID: 545286204}
+  - component: {fileID: 545286207}
   m_Layer: 5
   m_Name: Endless Button
   m_TagString: Untagged
@@ -1081,6 +1082,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545286202}
   m_CullTransparentMesh: 1
+--- !u!114 &545286207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545286202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4281b77190b1f47bdd174465b905c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &698213760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,6 +2843,7 @@ GameObject:
   - component: {fileID: 1519858356}
   - component: {fileID: 1519858355}
   - component: {fileID: 1519858354}
+  - component: {fileID: 1519858357}
   m_Layer: 5
   m_Name: Leaderboards Button
   m_TagString: Untagged
@@ -2974,6 +2988,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519858352}
   m_CullTransparentMesh: 1
+--- !u!114 &1519858357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519858352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4281b77190b1f47bdd174465b905c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1555596928
 GameObject:
   m_ObjectHideFlags: 0
