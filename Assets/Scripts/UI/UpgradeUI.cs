@@ -16,9 +16,20 @@ public class UpgradeUI : MonoBehaviour
     private Button buyButton;
 
     [SerializeField]
+    private Image boop;
+
+    [SerializeField]
+    private Sprite redBoop, greenBoop;
+
+    [SerializeField]
+    private RectTransform levelContainer;
+
+    [SerializeField]
     private TMPro.TextMeshProUGUI priceText;
 
     private UpgradeManager manager;
+
+    private List<Image> boops = new List<Image>();
 
     private void Start()
     {
@@ -26,8 +37,10 @@ public class UpgradeUI : MonoBehaviour
 
         buyButton.onClick.AddListener(Buy);
 
+        InitLevels();
         SetPrice();
         CheckIfAvailible();
+        RefreshLevels();
     }
 
     public void Buy()
@@ -42,7 +55,9 @@ public class UpgradeUI : MonoBehaviour
         currency.RemoveCurrency(next.cost);
         next.unlocked = true;
 
+        
         SetPrice();
+        RefreshLevels();
         CheckIfAvailible();
     }
 
@@ -63,6 +78,29 @@ public class UpgradeUI : MonoBehaviour
             return;
         }
         priceText.text = $"{next.cost} $";
+    }
+
+    private void InitLevels()
+    {
+        var upgradeValues = manager.FindUpgrade(type).UpgradeValues;
+        for (int i = 0; i < upgradeValues.Count; i++)
+        {
+            Image currentBoop = Instantiate(boop);
+            boops.Add(currentBoop);
+            currentBoop.transform.SetParent(levelContainer);
+            currentBoop.transform.SetAsFirstSibling();
+            currentBoop.transform.localScale = Vector3.one;
+        }
+    }
+
+    private void RefreshLevels()
+    {
+        var upgradeValues = manager.FindUpgrade(type).UpgradeValues;
+        for (int i = 0; i < upgradeValues.Count; i++)
+        {
+            Sprite currentBoopColor = upgradeValues[i].unlocked ? greenBoop : redBoop;
+            boops[i].sprite = currentBoopColor;
+        }
     }
 
 }
