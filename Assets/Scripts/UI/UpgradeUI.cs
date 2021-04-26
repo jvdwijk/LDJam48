@@ -58,7 +58,10 @@ public class UpgradeUI : MonoBehaviour
         currency.RemoveCurrency(next.cost);
         next.unlocked = true;
 
-        
+        int unlockedAmount = manager.FindUpgrade(type).GetUnlockedUpgradeAmount();
+        PlayerPrefs.SetInt("UpgradeType" + type.ToString(), (int) type);
+        PlayerPrefs.SetInt("UpgradeLevel" + type.ToString(), unlockedAmount);
+
         SetPrice();
         RefreshLevels();
         CheckIfAvailible();
