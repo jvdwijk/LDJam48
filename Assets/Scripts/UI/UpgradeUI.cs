@@ -33,7 +33,10 @@ public class UpgradeUI : MonoBehaviour
 
     private void Start()
     {
-        manager = GameObject.Find("UpgradesManager").GetComponent<UpgradeManager>();
+        manager = GameObject.Find("UpgradesManager")?.GetComponent<UpgradeManager>();
+
+        if (manager == null)
+            return;
 
         buyButton.onClick.AddListener(Buy);
 

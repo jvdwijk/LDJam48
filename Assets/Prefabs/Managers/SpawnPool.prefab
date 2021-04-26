@@ -61,21 +61,93 @@ MonoBehaviour:
   - prefab: {fileID: 4911205100003216595, guid: 1e499f835a25e2a479f21e2a55d84909, type: 3}
     upgradable: 0
     depthChance:
-    - depth: 50
-      rate: 60
-    - depth: 500
-      rate: 300
-    - depth: 1000
+    - depth: 100
       rate: 60
   - prefab: {fileID: 595430571554829151, guid: a8acd1ce98272c14a965bf578749f61b, type: 3}
     upgradable: 0
     depthChance:
-    - depth: 200
+    - depth: 600
       rate: 60
-    - depth: 1000
+    - depth: 1100
+      rate: 120
+    - depth: 1600
+      rate: 180
+    - depth: 2100
+      rate: 240
+    - depth: 2600
       rate: 300
+    - depth: 3100
+      rate: 360
+    - depth: 3600
+      rate: 420
+  - prefab: {fileID: 6272284684392252916, guid: e2f6303fe2b0a7547a0af18fbe90e840, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 0
+      rate: 40
+    - depth: 100
+      rate: 80
+    - depth: 400
+      rate: 60
+    - depth: 500
+      rate: 40
+    - depth: 600
+      rate: 0
+  - prefab: {fileID: 7368707744908533891, guid: 8d7e768f976e0af4281c168654f6cc40, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 400
+      rate: 20
+    - depth: 500
+      rate: 40
+    - depth: 600
+      rate: 60
+    - depth: 1100
+      rate: 40
+    - depth: 1300
+      rate: 20
+    - depth: 1500
+      rate: 0
+  - prefab: {fileID: 8498161894274215846, guid: c3c1eb94035d57a49a2e30d11b71d57a, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 1100
+      rate: 20
+    - depth: 1300
+      rate: 40
+    - depth: 1500
+      rate: 60
     - depth: 2000
-      rate: 600
+      rate: 40
+    - depth: 2200
+      rate: 20
+    - depth: 2300
+      rate: 0
+  - prefab: {fileID: 5132720460552653638, guid: e212d0ffc475a064aa1d88eacc120197, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 2000
+      rate: 20
+    - depth: 2200
+      rate: 40
+    - depth: 2900
+      rate: 20
+    - depth: 3200
+      rate: 0
+  - prefab: {fileID: 1047567490986168730, guid: d4514475a26db694a92ded597ebdea18, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 2900
+      rate: 20
+  - prefab: {fileID: 8978129999120511953, guid: 7ece7fc97b6e355458d78a49862ecfd5, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 100
+      rate: 20
+    - depth: 900
+      rate: 60
+    - depth: 2900
+      rate: 0
   spawnDistance: 200
   spawnChanceMultiplier: 1
   wormHead: {fileID: 0}
