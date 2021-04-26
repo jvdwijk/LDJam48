@@ -14,13 +14,41 @@ public class ValuableContounter : MonoBehaviour
     [SerializeField]
     private Portefeuille portefeuille;
 
+    [SerializeField]
+    private GameObject pouch;
+
     private Dictionary<string, ValuableScoreUI> scoreUIs = new Dictionary<string, ValuableScoreUI>();
     
     void Start()
     {
-        var keeper = GameObject.Find("ValuableKeeper").GetComponent<ValuableKeeper>();
-        var valuables = keeper.GetValuables;
+        var keeperGameobj = GameObject.Find("ValuableKeeper");
 
+        if (keeperGameobj == null)
+        {
+            pouch.SetActive(true);
+            return;
+        }
+
+        var keeper = keeperGameobj.GetComponent<ValuableKeeper>();
+
+        
+
+        var valuables = keeper.GetValuables;
+        if(valuables.Count > 0)
+        {
+            DisplayValuables(valuables);
+        }
+        else
+        {
+            pouch.SetActive(true);
+        }
+        
+
+        Destroy(keeper.gameObject);
+    }
+
+    private void DisplayValuables(List<ValuableStats> valuables)
+    {
         foreach (var valuable in valuables)
         {
             if (!scoreUIs.ContainsKey(valuable.name))
@@ -36,7 +64,7 @@ public class ValuableContounter : MonoBehaviour
             ValuableScoreUI scoreUI = scoreUIs[valuable.name];
             scoreUI.AddOne();
         }
-
-        Destroy(keeper.gameObject);
     }
+
+
 }
