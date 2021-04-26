@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public UnityEvent done;
 
     private float time;
-    private bool running;
+    private bool running = false;
 
     public void StartTimer(float DurationInSecs)
     {
