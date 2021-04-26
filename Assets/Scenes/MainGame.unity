@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -603,6 +603,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2140354913422110226, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: max
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2140354913422110226, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -633,6 +637,10 @@ PrefabInstance:
     - target: {fileID: 2140354913422110226, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: OnDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439566829835044719, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: hungerRate
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8363457579462339248, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: healthChunk
@@ -705,7 +713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f763bfd5f6c7d547814b32e09e603dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coreY: -880
+  coreY: -4000
   OnVictory:
     m_PersistentCalls:
       m_Calls:
@@ -1194,6 +1202,14 @@ PrefabInstance:
     - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
+      propertyPath: spawningChances.Array.data[3].prefab
+      value: 
+      objectReference: {fileID: 7368707744908533891, guid: 8d7e768f976e0af4281c168654f6cc40, type: 3}
+    - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
+      propertyPath: spawningChances.Array.data[3].depthChance.Array.data[0].depth
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6319116224367915873, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
       propertyPath: m_Name
