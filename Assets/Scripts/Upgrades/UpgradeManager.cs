@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    private static UpgradeManager instance;
+
     [SerializeField]
     private List<Upgrade> upgrades;
 
     private void Start()
     {
+        if (instance == null) instance = this;
+        else if (!instance.Equals(this)) Destroy(gameObject);
+
         DontDestroyOnLoad(gameObject);
     }
 
