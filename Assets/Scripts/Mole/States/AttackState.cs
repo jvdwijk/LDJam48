@@ -26,7 +26,7 @@ public class AttackState : State
 
     private Coroutine attackRoutine;
 
-    public float damage = 5;
+    public float damage = 80;
     public float attackDelay = 2;
 
     private void Start()
