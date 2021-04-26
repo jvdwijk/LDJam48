@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3678235598259106323}
   - component: {fileID: 3678235598259106319}
   m_Layer: 0
-  m_Name: ValuablePickup
+  m_Name: ValuablePickup 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,6 +178,6 @@ MonoBehaviour:
   wantedTag:
   - Player
   stats:
-    icon: {fileID: 21300000, guid: 55cbdf4efe493874ea75773edbbca07e, type: 3}
-    name: Rock
-    price: 10
+    icon: {fileID: 21300000, guid: a9749cd1ce8cff142a6492673806f93d, type: 3}
+    name: Agate
+    price: 40
