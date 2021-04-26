@@ -7,6 +7,10 @@ public class WormMovement : MonoBehaviour
     private Rigidbody2D wormRigidBody;
 
     [SerializeField]
+    private float upBorder, leftBorder, rightBorder;
+
+
+    [SerializeField]
     private float wormSpeed = 10;
     [SerializeField]
     private float rotateSpeed = 10;
@@ -33,7 +37,19 @@ public class WormMovement : MonoBehaviour
     {
         wormRigidBody.velocity = -transform.up * wormSpeed * speedMult;
 
-        if (PlayerPrefs.GetInt("controllerType") == (int) ControllerTypes.Controller)
+        if (transform.position.x > leftBorder)
+        {
+            MoveLeft();
+        }
+        else if (transform.position.x > rightBorder)
+        {
+            MoveRight();
+        }
+        else if(transform.position.y > upBorder)
+        {
+            MoveDown();
+        }
+        else if (PlayerPrefs.GetInt("controllerType") == (int) ControllerTypes.Controller)
             ControllerMovement();
         else
             MouseMovement();
@@ -59,6 +75,30 @@ public class WormMovement : MonoBehaviour
 
             transform.Rotate(0, 0, -horizontalAxis * rotateSpeed * Time.deltaTime);
         }
+    }
+
+    private void MoveDown()
+    {
+        Vector3 wormPosition = transform.position;
+        float signedEngel = Vector2.SignedAngle(transform.up, -Vector3.down);
+
+        transform.Rotate(0, 0, Mathf.Max(Mathf.Min(signedEngel, rotateSpeed * Time.deltaTime), -rotateSpeed * Time.deltaTime));
+    }
+
+    private void MoveRight()
+    {
+        Vector3 wormPosition = transform.position;
+        float signedEngel = Vector2.SignedAngle(transform.up, -Vector3.right - Vector3.down);
+
+        transform.Rotate(0, 0, Mathf.Max(Mathf.Min(signedEngel, rotateSpeed * Time.deltaTime), -rotateSpeed * Time.deltaTime));
+    }
+
+    private void MoveLeft()
+    {
+        Vector3 wormPosition = transform.position;
+        float signedEngel = Vector2.SignedAngle(transform.up, -Vector3.left - Vector3.down);
+
+        transform.Rotate(0, 0, Mathf.Max(Mathf.Min(signedEngel, rotateSpeed * Time.deltaTime), -rotateSpeed * Time.deltaTime));
     }
 
     public void multSpeed(float input)
