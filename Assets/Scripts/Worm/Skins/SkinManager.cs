@@ -42,6 +42,11 @@ public class SkinManager : MonoBehaviour
 
     public SkinData[] Skins => skins;
 
+    public void SetSkin(string selectSkin)
+    {
+        SetSkin(GetByName(selectSkin));
+    }
+
     public void SetSkin(SkinData selectSkin)
     {
         currentskin = selectSkin;
