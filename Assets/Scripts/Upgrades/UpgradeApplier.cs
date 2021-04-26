@@ -11,7 +11,7 @@ public class UpgradeApplier : MonoBehaviour
 
     private void Start()
     {
-        manager = FindObjectOfType<UpgradeManager>();
+        manager = UpgradeManager.Instance;
 
         foreach (UpgradesDictionary dictionaryPart in upgradesDictionary)
         {
