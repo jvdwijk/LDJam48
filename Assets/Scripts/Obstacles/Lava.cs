@@ -15,7 +15,12 @@ public class Lava : MonoBehaviour
             float distance = Vector3.Distance(hitCollider.transform.position, transform.position);
             if (distance < damageRadius && hitCollider.TryGetComponent(out Health health)) //filter only Gameobjects within range and with the script health
             {
+                DamageFeedback.Instance.FireDamage();
                 health.Damage(damageRate * Time.deltaTime * (1 - distance / damageRadius)); //less damage over time the further you are from the mine
+            }
+            else if(hitCollider.TryGetComponent(out Health bealth))
+            {
+                DamageFeedback.Instance.FireDamage(true);
             }
         }
     }

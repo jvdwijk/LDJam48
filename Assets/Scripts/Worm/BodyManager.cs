@@ -51,8 +51,12 @@ public class BodyManager : MonoBehaviour
             }
             else
             {
+                DamageFeedback.Instance.Damage();
                 neededParts += 1;
                 RemovePart();
+
+                yield return new WaitForSeconds(0.35f);
+                DamageFeedback.Instance.Damage(true);
             }
 
             chunks = (int)health / healthChunk;
@@ -77,6 +81,7 @@ public class BodyManager : MonoBehaviour
 
     private void RemovePart()
     {
+        
         tail.SetUpFollow(middleParts.Count > 1 ? 
             middleParts[middleParts.Count - 2].transform : head.transform);
 
