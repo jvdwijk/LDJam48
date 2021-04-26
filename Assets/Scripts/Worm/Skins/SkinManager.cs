@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class SkinManager : MonoBehaviour
     private SkinData currentskin;
 
     public Skin Current => currentskin.skin;
+
+    public event Action<Skin> OnSkinChange;
 
     private void Awake()
     {
@@ -42,6 +45,7 @@ public class SkinManager : MonoBehaviour
     public void SetSkin(SkinData selectSkin)
     {
         currentskin = selectSkin;
+        OnSkinChange?.Invoke(selectSkin.skin);
     }
 
     public void Unlock(string name)
