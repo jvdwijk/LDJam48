@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 144670488}
   - component: {fileID: 144670487}
   - component: {fileID: 144670489}
+  - component: {fileID: 144670490}
   m_Layer: 0
   m_Name: testy
   m_TagString: Untagged
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cea5abdb5e1f950468c7ea1567a1032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPool: {fileID: 144670490}
   spawningChances:
   - prefab: {fileID: 3050707983148811331, guid: da4e5ad83820bc24aab82e9f6a274e13, type: 3}
     depthChance:
@@ -192,9 +194,20 @@ MonoBehaviour:
     depthChance:
     - depth: 200
       rate: 60
-  spawnDistance: 100
-  spawnWidth: 100
-  wormhead: {fileID: 1743203823}
+  spawnDistance: 200
+  wormHead: {fileID: 1743203823}
+--- !u!114 &144670490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144670486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d17db480b69209408609bef3cee3c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &460728243
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +337,7 @@ Camera:
   m_GameObject: {fileID: 860133654}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

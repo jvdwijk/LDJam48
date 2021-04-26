@@ -6,4 +6,5 @@ public class SpawningChance
 {
     public GameObject prefab;
     public DepthChance[] depthChance;
+    public bool upgradable;
 }

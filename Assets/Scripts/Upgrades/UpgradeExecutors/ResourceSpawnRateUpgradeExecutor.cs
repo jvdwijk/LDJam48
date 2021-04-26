@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ResourceSpawnRateUpgradeExecutor : UpgradeExecutor
 {
+    [SerializeField]
+    private SpawnThings spawnThings;
+
     public override void Execute(UpgradeStat stat)
     {
-        throw new System.NotImplementedException();
+        spawnThings.spawnChanceMultiplier = spawnThings.spawnChanceMultiplier + stat.statValue;
     }
 }
