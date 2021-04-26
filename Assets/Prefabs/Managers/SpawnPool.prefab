@@ -142,8 +142,10 @@ MonoBehaviour:
   - prefab: {fileID: 8978129999120511953, guid: 7ece7fc97b6e355458d78a49862ecfd5, type: 3}
     upgradable: 0
     depthChance:
+    - depth: 100
+      rate: 20
     - depth: 900
-      rate: 180
+      rate: 60
     - depth: 2900
       rate: 0
   spawnDistance: 200
