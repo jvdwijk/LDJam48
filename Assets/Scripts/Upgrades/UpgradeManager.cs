@@ -36,4 +36,22 @@ public class UpgradeManager : MonoBehaviour
         }
         return null;
     }
+
+    /// <summary>
+    /// Calculate the percentage of upgrades unlocked.
+    /// </summary>
+    /// <returns>Returns a value between 0 and 1.</returns>
+    public float GetPercentageUnlocked()
+    {
+        float totalUpgrades = 0;
+        float unlockedUpgrades = 0;
+
+        foreach (Upgrade upgrade in upgrades)
+        {
+            totalUpgrades += upgrade.GetTotalUpgrades();
+            unlockedUpgrades += upgrade.GetUnlockedUpgradeAmount();
+        }
+
+        return unlockedUpgrades / totalUpgrades;
+    }
 }

@@ -41,4 +41,20 @@ public class Upgrade
         }
         return isLocked ? null : previousStat;
     }
+
+    public int GetUnlockedUpgradeAmount()
+    {
+        int amountUnlocked = 0;
+        foreach (UpgradeStat stat in upgradeValues)
+        {
+            if (stat.unlocked) amountUnlocked++;
+        }
+
+        return amountUnlocked;
+    }
+
+    public int GetTotalUpgrades()
+    {
+        return upgradeValues.Count;
+    }
 }
