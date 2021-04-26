@@ -23,6 +23,8 @@ public class Upgrade
         get { return type; }
     }
 
+    public List<UpgradeStat> UpgradeValues => upgradeValues;
+
     /// <summary>
     /// Gets the next locked upgrade or the highest unlocked upgrade.
     /// </summary>
