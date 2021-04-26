@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class ValuableKeeper : MonoBehaviour
 
     [SerializeField]
     private float valueMult = 1;
+
+    public event Action<ValuableStats> OnValuableAdded;
 
     public float ValueMult
     {
@@ -24,6 +27,7 @@ public class ValuableKeeper : MonoBehaviour
     public void AddValuable(ValuableStats valuable)
     {
         valuables.Add(valuable);
+        OnValuableAdded?.Invoke(valuable);
     }
 
     public List<ValuableStats> GetValuables
