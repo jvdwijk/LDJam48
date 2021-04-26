@@ -21,7 +21,12 @@ public class Leaderboard : MonoBehaviour
 
     public void StartStart()
     {
+        //TODO: If PlayerPrefs is implemented uncomment line below
+        // string uuid = PlayerPrefs.GetString("uuid");
+        string uuid = "6eaa09b2-b7d6-491e-9bd1-b34a028722fd";
+        
         StartCoroutine(GetLeaderboardData($"{DOMAIN}/leaderboard"));
+        StartCoroutine(GetUserLeaderboardPosition($"{DOMAIN}/leaderboard/{uuid}"));
     }
 
     private IEnumerator GetLeaderboardData(string uri)
@@ -45,6 +50,27 @@ public class Leaderboard : MonoBehaviour
                     Debug.Log(leaderboardData["leaderboard"][i]["name"]);
                     Debug.Log(leaderboardData["leaderboard"][i]["depth"]);
                 }
+            }
+        }
+    }
+
+    private IEnumerator GetUserLeaderboardPosition(string uri)
+    {
+        using (UnityWebRequest request = UnityWebRequest.Get(uri))
+        {
+            yield return request.SendWebRequest();
+            
+            if (request.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.LogError(request.error);
+            }
+            else
+            {
+                JSONNode userLeaderboardData = JSON.Parse(request.downloadHandler.text);
+                
+                Debug.Log(userLeaderboardData["leaderboard"]["userPosition"]["position"]);
+                Debug.Log(userLeaderboardData["leaderboard"]["userPosition"]["name"]);
+                Debug.Log(userLeaderboardData["leaderboard"]["userPosition"]["depth"]);
             }
         }
     }
