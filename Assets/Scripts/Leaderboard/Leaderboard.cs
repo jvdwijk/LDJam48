@@ -1,13 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using SimpleJSON;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
 public class Leaderboard : MonoBehaviour
 {
     private const string DOMAIN = "https://jimdinanttocore.ga";
+
+    public GameObject LeaderboardRow;
+    public Transform parentPanel;
     
     public void Start()
     {
@@ -41,14 +44,22 @@ public class Leaderboard : MonoBehaviour
             }
             else
             {
-                JSONNode leaderboardData = JSON.Parse(request.downloadHandler.text);
-                int numberOfItems = leaderboardData["leaderboard"].Count;
-
-                for (int i = 0; i < numberOfItems; i++)
+                LeaderboardData data = JsonUtility.FromJson<LeaderboardData>(request.downloadHandler.text);
+                
+                foreach (LeaderboardItem leaderboardItem in data.leaderboard)
                 {
-                    Debug.Log(leaderboardData["leaderboard"][i]["position"]);
-                    Debug.Log(leaderboardData["leaderboard"][i]["name"]);
-                    Debug.Log(leaderboardData["leaderboard"][i]["depth"]);
+                    GameObject row = Instantiate(LeaderboardRow);
+                    row.transform.SetParent(parentPanel);
+
+                    foreach (Transform child in row.transform)
+                    {
+                        if (child.name == "Position")
+                            child.GetComponent<TextMeshProUGUI>().text = leaderboardItem.position.ToString();
+                        if (child.name == "Name")
+                            child.GetComponent<TextMeshProUGUI>().text = leaderboardItem.name;
+                        if (child.name == "Depth")
+                            child.GetComponent<TextMeshProUGUI>().text = leaderboardItem.depth.ToString();
+                    }
                 }
             }
         }
@@ -66,11 +77,7 @@ public class Leaderboard : MonoBehaviour
             }
             else
             {
-                JSONNode userLeaderboardData = JSON.Parse(request.downloadHandler.text);
-                
-                Debug.Log(userLeaderboardData["leaderboard"]["userPosition"]["position"]);
-                Debug.Log(userLeaderboardData["leaderboard"]["userPosition"]["name"]);
-                Debug.Log(userLeaderboardData["leaderboard"]["userPosition"]["depth"]);
+                //playersLeaderboardItem = JsonUtility.FromJson<LeaderboardItem>(request.downloadHandler.text);
             }
         }
     }
