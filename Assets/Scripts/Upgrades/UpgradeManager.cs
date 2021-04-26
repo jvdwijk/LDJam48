@@ -20,6 +20,25 @@ public class UpgradeManager : MonoBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+        LoadData();
+    }
+
+    private void LoadData()
+    {
+        foreach (UpgradeType upgradeName in UpgradeType.GetValues(typeof(UpgradeType)))
+        {
+            int upgradedLevel = PlayerPrefs.GetInt("UpgradeLevel" + upgradeName);
+            if (upgradedLevel == 0)
+                continue;
+
+            UpgradeType type = (UpgradeType) PlayerPrefs.GetInt("UpgradeType" + upgradeName);
+            Upgrade upgrade = FindUpgrade(type);
+
+            for (int i = 0; i < upgradedLevel; i++)
+            {
+                upgrade.GetHighest(true).unlocked = true;
+            }
+        }
     }
 
     public List<Upgrade> GetUpgrades

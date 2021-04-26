@@ -33,7 +33,10 @@ public class UpgradeUI : MonoBehaviour
 
     private void Start()
     {
-        manager = GameObject.Find("UpgradesManager").GetComponent<UpgradeManager>();
+        manager = GameObject.Find("UpgradesManager")?.GetComponent<UpgradeManager>();
+
+        if (manager == null)
+            return;
 
         buyButton.onClick.AddListener(Buy);
 
@@ -55,7 +58,10 @@ public class UpgradeUI : MonoBehaviour
         currency.RemoveCurrency(next.cost);
         next.unlocked = true;
 
-        
+        int unlockedAmount = manager.FindUpgrade(type).GetUnlockedUpgradeAmount();
+        PlayerPrefs.SetInt("UpgradeType" + type.ToString(), (int) type);
+        PlayerPrefs.SetInt("UpgradeLevel" + type.ToString(), unlockedAmount);
+
         SetPrice();
         RefreshLevels();
         CheckIfAvailible();

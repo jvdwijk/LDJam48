@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,10 @@ public class BodyManager : MonoBehaviour
     private List<BodyMovement> middleParts = new List<BodyMovement>();
 
     private bool isCheckingParts = false;
+
+    public event Action<GameObject> OnMiddlePartAdded;
+
+    public List<BodyMovement> MiddleParts => middleParts;
 
     public void CheckParts(float health)
     {
@@ -67,6 +72,7 @@ public class BodyManager : MonoBehaviour
         tail.SetUpFollow(part.transform);
         middleParts.Add(part);
         part.transform.SetParent(gameObject.transform);
+        OnMiddlePartAdded?.Invoke(part.gameObject);
     }
 
     private void RemovePart()
