@@ -9,6 +9,8 @@ public class SpawnThings : MonoBehaviour
     public SpawningChance[] spawningChances;
     public float spawnDistance;
 
+    public float spawnChanceMultiplier = 1;
+
     public GameObject wormHead;
 
     private void Start()
@@ -29,7 +31,7 @@ public class SpawnThings : MonoBehaviour
                     break;
                 }
             }
-            if (spawnRate != 0 && Random.Range(0f,1f) < Time.deltaTime / 60 * spawnRate)
+            if (spawnRate != 0 && Random.Range(0f,1f) < Time.deltaTime / 60 * spawnRate * (chancy.upgradable ? spawnChanceMultiplier : 1))
             {
                 Spawn(chancy.prefab);
             }
