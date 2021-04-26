@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hunger : MonoBehaviour
 {
-    private float hungerRate = 1;
+    public  float hungerRate = 1;
     private float hungerMult = 1;
     private Health health;
 
