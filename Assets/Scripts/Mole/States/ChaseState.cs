@@ -6,7 +6,7 @@ public class ChaseState : State
 {
 
     [SerializeField]
-    private GameObject player;
+    public GameObject player;
 
     [SerializeField]
     private ObjectChaser chaser;
