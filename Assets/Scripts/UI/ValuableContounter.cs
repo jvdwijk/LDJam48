@@ -37,6 +37,6 @@ public class ValuableContounter : MonoBehaviour
             scoreUI.AddOne();
         }
 
-        Destroy(keeper);
+        Destroy(keeper.gameObject);
     }
 }

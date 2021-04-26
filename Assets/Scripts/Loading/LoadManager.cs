@@ -9,6 +9,8 @@ public class LoadManager : MonoBehaviour
     [SerializeField]
     private ImageFade imageFade;
 
+    private bool isUsed = false;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -22,6 +24,7 @@ public class LoadManager : MonoBehaviour
             {
                 return;
             }
+            isUsed = true;
 
             SceneManager.LoadScene(sceneName);
         });
@@ -30,7 +33,13 @@ public class LoadManager : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-        imageFade.SetTarget(0);
+        if (!isUsed)
+            return;
+        imageFade.SetTarget(0, (reached) => {
+
+            Destroy(gameObject);
+
+        });
     }
 
 
