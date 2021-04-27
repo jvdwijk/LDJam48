@@ -153,11 +153,30 @@ MonoBehaviour:
     depthChance:
     - depth: 100
       rate: 30
+    - depth: 1000
+      rate: 0
   - prefab: {fileID: 3678235598259106316, guid: 9182de4812744be4e85e3886489c60dc, type: 3}
     upgradable: 0
     depthChance:
     - depth: 300
       rate: 30
+    - depth: 1600
+      rate: 0
+  - prefab: {fileID: 3678235598259106316, guid: 710ec568fe2fa1147a8d3bd773eac502, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 800
+      rate: 20
+  - prefab: {fileID: 3678235598259106316, guid: 1cedd97aaa159da4fae8d835fd1bfdbe, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 1500
+      rate: 15
+  - prefab: {fileID: 3678235598259106316, guid: a724d336704934b419cdaa6dddb7b3a0, type: 3}
+    upgradable: 0
+    depthChance:
+    - depth: 2200
+      rate: 10
   spawnDistance: 200
   spawnChanceMultiplier: 1
   wormHead: {fileID: 0}
