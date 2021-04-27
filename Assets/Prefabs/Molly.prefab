@@ -313,7 +313,7 @@ MonoBehaviour:
   chaser: {fileID: 8978129999120511959}
   rotator: {fileID: 8978129999120511960}
   maxDistanceToPlayer: 50
-  minDistanceToPlayer: 3
+  minDistanceToPlayer: 20
   idleState: {fileID: 8978129999147175552}
   attackState: {fileID: 8978130000771876275}
 --- !u!1 &8978130000216614885
@@ -412,5 +412,5 @@ MonoBehaviour:
   maxDistanceToPlayer: 4
   minDistanceToPlayer: 2
   chaseState: {fileID: 8978129999679672828}
-  damage: 5
-  attackDelay: 2
+  damage: 25
+  attackDelay: 6
