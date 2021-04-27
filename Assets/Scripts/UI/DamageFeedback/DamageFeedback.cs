@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DamageFeedback : MonoBehaviour
 {
@@ -37,5 +38,11 @@ public class DamageFeedback : MonoBehaviour
         damageFeedback.enabled = !finished;
         if(!finished)
             damageSound.Play();
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        FireDamage(true);
+        Damage(true);
     }
 }

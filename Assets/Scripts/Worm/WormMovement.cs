@@ -45,7 +45,8 @@ public class WormMovement : MonoBehaviour
         {
             MoveLeft();
         }
-        else if(transform.position.y > upBorder)
+        else if((transform.position.y > upBorder && PlayerPrefs.GetInt("worm_skin_Space Jimdinant") > 0) 
+            && SkinManager.Instance.Current.Name != "Space Jimdinant")
         {
             MoveDown();
         }
