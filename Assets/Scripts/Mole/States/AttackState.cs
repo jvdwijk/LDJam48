@@ -27,7 +27,7 @@ public class AttackState : State
     private Coroutine attackRoutine;
 
     public float damage = 80;
-    public float attackDelay = 2;
+    public float attackDelay = 2, waitTime = 1;
 
     private void Start()
     {
@@ -72,8 +72,9 @@ public class AttackState : State
     {
         while (true)
         {
-            yield return new WaitForSeconds(attackDelay);
+            yield return new WaitForSeconds(waitTime);
             playerHealth.Damage(damage);
+            yield return new WaitForSeconds(attackDelay);
         }
     }
 }

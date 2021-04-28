@@ -31,7 +31,10 @@ public class UpgradeManager : MonoBehaviour
             if (upgradedLevel == 0)
                 continue;
 
-            UpgradeType type = (UpgradeType) PlayerPrefs.GetInt("UpgradeType" + upgradeName);
+            UpgradeType type = (UpgradeType) PlayerPrefs.GetInt("UpgradeType" + upgradeName, -1);
+            if (type == null)
+                continue;
+
             Upgrade upgrade = FindUpgrade(type);
 
             for (int i = 0; i < upgradedLevel; i++)

@@ -17,6 +17,8 @@ public class ValuableContounter : MonoBehaviour
     [SerializeField]
     private GameObject pouch;
 
+    private ValuableKeeper keeper;
+
     private Dictionary<string, ValuableScoreUI> scoreUIs = new Dictionary<string, ValuableScoreUI>();
     
     void Start()
@@ -29,7 +31,7 @@ public class ValuableContounter : MonoBehaviour
             return;
         }
 
-        var keeper = keeperGameobj.GetComponent<ValuableKeeper>();
+        keeper = keeperGameobj.GetComponent<ValuableKeeper>();
 
         
 
@@ -60,7 +62,7 @@ public class ValuableContounter : MonoBehaviour
                 scoreUIs.Add(valuable.name, onion);
             }
 
-            portefeuille.AddCurrency(valuable.price);
+            portefeuille.AddCurrency((int)(valuable.price * keeper.ValueMult));
             ValuableScoreUI scoreUI = scoreUIs[valuable.name];
             scoreUI.AddOne();
         }

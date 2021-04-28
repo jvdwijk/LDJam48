@@ -103,7 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewAngle: 46.74
-  viewRadius: 100
+  viewRadius: 200
+  aroundRadius: 50
   target:
     serializedVersion: 2
     m_Bits: 2147483648
@@ -169,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066cb06485ccfae49afbfe165ddddc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!114 &8978129999120511960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,8 +410,9 @@ MonoBehaviour:
   player: {fileID: 0}
   rotator: {fileID: 8978129999120511960}
   chaser: {fileID: 8978129999120511959}
-  maxDistanceToPlayer: 4
+  maxDistanceToPlayer: 15
   minDistanceToPlayer: 2
   chaseState: {fileID: 8978129999679672828}
-  damage: 25
-  attackDelay: 6
+  damage: 60
+  attackDelay: 7
+  waitTime: 1
