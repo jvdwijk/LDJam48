@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,22 +6,25 @@ using UnityEngine;
 public class BackgroundTile : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
 
-    public SpriteRenderer Renderer => renderer;
+    public SpriteRenderer Renderer => spriteRenderer;
+
+    public event Action<Vector2> onPositionChange;
 
     private void Reset()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public Vector2 GetSize()
     {
-        return renderer.bounds.size;
+        return spriteRenderer.bounds.size;
     }
 
     public void MoveTo(Vector2 newPosition)
     {
         transform.position = newPosition;
+        onPositionChange?.Invoke(newPosition);
     }
 }

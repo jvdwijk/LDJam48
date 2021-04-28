@@ -32,7 +32,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 
     private void Update()
     {
-        Bounds camBounds = GetCameraBounds();
+        Bounds camBounds = GetCameraBounds();//TODO: switch from using bounds to using rects (including changing the bounds from the spriterenderer to rects)
 
         while (true)
         {
@@ -67,7 +67,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
         return cameraBounds;
     }
 
-    private void MoveLowestColumnToHighest()
+    private void MoveLowestColumnToHighest()//TODO: Can we combine the highest to lowest and lowest to highest methods somehow?
     {
         var outerColumnIndices = GetOuterValueIndices(columnPositions);
         int lowestColumn = outerColumnIndices.Item1;
@@ -111,7 +111,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
         MoveBounds(0, -tileSize.y);
     }
 
-    private (int, int) GetOuterValueIndices(float[] array)
+    private (int, int) GetOuterValueIndices(float[] array)//TODO: Rememver those values instead of searching for them
     {
         int lowest = 0;
         int highest = 0;
@@ -130,7 +130,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
         return (lowest, highest);
     }
 
-    private void MoveColumn(int column, float position)
+    private void MoveColumn(int column, float position)//TODO can we combine the moverow and move column methods?
     {
         for (int i = 0; i < backgroundGridHeight; i++)
         {
@@ -170,7 +170,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 
     }
 
-    private void CreateBackground()
+    private void CreateBackground()//TODO: should the background be created in a seperate class?
     {
         camHeight = cam.orthographicSize * 2;
         camWidth = cam.orthographicSize * cam.aspect * 2;

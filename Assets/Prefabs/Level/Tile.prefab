@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6838473265144874366}
   - component: {fileID: 6838473265144874365}
   - component: {fileID: 6838473265144874364}
+  - component: {fileID: 9000470975099293087}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6838473265144874367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 1.43, y: -8.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &6838473265144874365
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 004e43cb2d773d84eab35528f92902c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.984375, y: 0.984375}
   m_AdaptiveModeThreshold: 0.5
@@ -95,4 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b1aa8a2f30a204b80998e252c398f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 6838473265144874365}
+  spriteRenderer: {fileID: 6838473265144874365}
+--- !u!114 &9000470975099293087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838473265144874367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0a5551ec4cd7a4b82a6594d3f7c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grass: {fileID: 21300000, guid: 09880df67bcf44e4d92d04de0bbc8327, type: 3}
+  dirt: {fileID: 21300000, guid: 004e43cb2d773d84eab35528f92902c1, type: 3}
+  gradientDirt: {fileID: 21300000, guid: 605cd18c6a7551b4eaab025b2ce0c026, type: 3}
+  darkDirt: {fileID: 21300000, guid: 89f23653dc61902408ae5ff0e2d2089b, type: 3}
