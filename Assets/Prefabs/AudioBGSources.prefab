@@ -55,9 +55,9 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: b35dfd67e521cf94a8671e79e22f5305, type: 3}
     fraction: 0.3
   - clip: {fileID: 8300000, guid: 4d3c46848f596b943924cc00b5d44eea, type: 3}
-    fraction: 0.15
+    fraction: 0.1
   - clip: {fileID: 8300000, guid: c24c756b4b9a1b2498f6ebeea5c42dfa, type: 3}
-    fraction: 0.03
+    fraction: 0.01
   - clip: {fileID: 8300000, guid: b30ffe6d3128c844d87a74ca7e500c44, type: 3}
     fraction: 0
   mainAudioSource: {fileID: 5525056841342285526}
