@@ -61,8 +61,7 @@ public class BodyManager : MonoBehaviour
 
             chunks = (int)health / healthChunk;
             neededParts = chunks - middleParts.Count;
-            yield return new WaitForSeconds(neededParts == 0 ?
-                chunkyWait : waitTime);
+            yield return neededParts == 0 ? null : new WaitForSeconds(waitTime);
         }
         isCheckingParts = false;
     }
