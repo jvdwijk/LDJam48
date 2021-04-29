@@ -27,7 +27,7 @@ public class TileSpriteChange : MonoBehaviour
         spriteRenderer.enabled = true;
         if (y > surfaceDepth)
         {
-            spriteRenderer.enabled = y < tile.GetSize().y;
+            spriteRenderer.enabled = y < surfaceDepth + tile.GetSize().y;
             spriteRenderer.sprite = grass;
         }else if (y < darkDirtDepth)
         {
