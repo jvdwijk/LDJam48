@@ -17,6 +17,9 @@ public class SkinStore : MonoBehaviour
     private SkinSelector selector;
 
     [SerializeField]
+    private Portefeuille currency;
+
+    [SerializeField]
     private int current;
 
     void Start()
@@ -41,6 +44,10 @@ public class SkinStore : MonoBehaviour
 
         seller.OnSkinBought += (skin) =>
         {
+            if (currency.Currency < skin.price)
+                return;
+
+            currency.RemoveCurrency(skin.price);
             SkinManager.Instance.Unlock(skin.skin.name);
             SelectSkin(current);
         };
