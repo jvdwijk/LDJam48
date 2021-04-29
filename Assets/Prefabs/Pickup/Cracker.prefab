@@ -177,4 +177,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wantedTag:
   - Player
-  healAmount: 5
+  healAmount: 30
