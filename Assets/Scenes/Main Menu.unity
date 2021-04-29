@@ -301,34 +301,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[2].upgradeValues.Array.data[0].cost
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[0].unlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[1].unlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[2].unlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[3].unlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[3].upgradeValues.Array.data[4].unlocked
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
-      propertyPath: upgrades.Array.data[5].upgradeValues.Array.data[0].unlocked
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2766141427258862102, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
       propertyPath: m_Name
       value: UpgradesManager

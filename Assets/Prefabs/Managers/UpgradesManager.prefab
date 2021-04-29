@@ -62,9 +62,6 @@ MonoBehaviour:
     - cost: 3000
       statValue: 60
       unlocked: 0
-    - cost: 50000
-      statValue: 100
-      unlocked: 0
   - title: Turn Speed
     type: 1
     upgradeValues:
@@ -89,7 +86,7 @@ MonoBehaviour:
   - title: Hunger Rate
     type: 2
     upgradeValues:
-    - cost: 100
+    - cost: 50
       statValue: 0.95
       unlocked: 0
     - cost: 500
@@ -107,21 +104,21 @@ MonoBehaviour:
   - title: Health
     type: 3
     upgradeValues:
-    - cost: 300
+    - cost: 250
       statValue: 20
-      unlocked: 1
+      unlocked: 0
     - cost: 800
       statValue: 50
-      unlocked: 1
+      unlocked: 0
     - cost: 1500
       statValue: 100
-      unlocked: 1
+      unlocked: 0
     - cost: 4000
       statValue: 200
-      unlocked: 1
+      unlocked: 0
     - cost: 8000
       statValue: 300
-      unlocked: 1
+      unlocked: 0
   - title: Valuable spawn rate
     type: 4
     upgradeValues:
@@ -145,7 +142,7 @@ MonoBehaviour:
     upgradeValues:
     - cost: 1000
       statValue: 1.2
-      unlocked: 1
+      unlocked: 0
     - cost: 3000
       statValue: 1.5
       unlocked: 0

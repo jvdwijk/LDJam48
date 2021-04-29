@@ -104,12 +104,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewAngle: 46.74
   viewRadius: 200
+  instantSpotRadius: 25
   target:
     serializedVersion: 2
     m_Bits: 2147483648
   drawGizmos: 1
   drawLines: 1
   drawSphere: 0
+  drawInstantSpotSphere: 1
 --- !u!50 &8978129999120511957
 Rigidbody2D:
   serializedVersion: 4
@@ -409,7 +411,7 @@ MonoBehaviour:
   player: {fileID: 0}
   rotator: {fileID: 8978129999120511960}
   chaser: {fileID: 8978129999120511959}
-  maxDistanceToPlayer: 15
+  maxDistanceToPlayer: 20
   minDistanceToPlayer: 2
   chaseState: {fileID: 8978129999679672828}
   damage: 60

@@ -2401,6 +2401,7 @@ MonoBehaviour:
   display: {fileID: 969917473}
   seller: {fileID: 747065942}
   selector: {fileID: 1429210842}
+  currency: {fileID: 1609313206}
   current: 2
 --- !u!114 &865731391
 MonoBehaviour:

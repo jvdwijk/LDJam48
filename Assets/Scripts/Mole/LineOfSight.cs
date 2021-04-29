@@ -8,6 +8,7 @@ public class LineOfSight : MonoBehaviour
     [Header("Line Of Sight")]
     [SerializeField, Range(0, 360)] private float viewAngle = 90;
     [SerializeField] private float viewRadius = 30;
+    [SerializeField] private float instantSpotRadius = 5;
 
     [Header("Objects")]
     [SerializeField] private LayerMask target;
@@ -15,7 +16,8 @@ public class LineOfSight : MonoBehaviour
     [Header("Gizmos")]
     [SerializeField] private bool drawGizmos = false;
     [SerializeField] private bool drawLines = true;
-    [SerializeField] private bool drawSphere = false;
+    [SerializeField] private bool drawSphere = false; 
+    [SerializeField] private bool drawInstantSpotSphere = false;
 
     public float ViewRadius { get { return viewRadius; } set { viewRadius = value; } }
     public float ViewAngle { get { return viewAngle; } set { viewAngle = value; } }
@@ -40,12 +42,13 @@ public class LineOfSight : MonoBehaviour
 
     public bool IsObjectInView(GameObject obj)
     {
-        return IsObjectInRange(obj) && IsObjectInAngle(obj) && IsObjectInLayer(obj);
+        return IsObjectInRange(obj, instantSpotRadius) || 
+               IsObjectInRange(obj, viewRadius) && IsObjectInAngle(obj) && IsObjectInLayer(obj);
     }
 
-    private bool IsObjectInRange(GameObject obj)
+    private bool IsObjectInRange(GameObject obj, float range)
     {
-        return (obj.transform.position - transform.position).magnitude < viewRadius;
+        return (obj.transform.position - transform.position).magnitude < range;
     }
 
     private bool IsObjectInAngle(GameObject obj)
@@ -66,6 +69,9 @@ public class LineOfSight : MonoBehaviour
 
         if (drawSphere)
             Gizmos.DrawWireSphere(transform.position, viewRadius);
+
+        if(drawInstantSpotSphere)
+            Gizmos.DrawWireSphere(transform.position, instantSpotRadius);
 
         if (!drawLines)
             return;
