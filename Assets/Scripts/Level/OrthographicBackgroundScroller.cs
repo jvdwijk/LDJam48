@@ -69,45 +69,37 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 
     private void MoveLowestColumnToHighest()//TODO: Can we combine the highest to lowest and lowest to highest methods somehow?
     {
-        var outerColumnIndices = GetOuterValueIndices(columnPositions);
-        int lowestColumn = outerColumnIndices.lowest;
-        int highestColumn = outerColumnIndices.highest;
-        float highestColumnX = columnPositions[highestColumn];
+        var(lowest, highest)= GetOuterValueIndices(columnPositions);
+        float highestColumnX = columnPositions[highest];
 
-        MoveColumn(lowestColumn, highestColumnX + tileSize.x);
+        MoveColumn(lowest, highestColumnX + tileSize.x);
         MoveBounds(tileSize.x, 0);
     }
 
     private void MoveHighestColumnToLowest()
     {
-        var outerColumnIndices = GetOuterValueIndices(columnPositions);
-        int highestColumn = outerColumnIndices.highest;
-        int lowestColumn = outerColumnIndices.lowest;
-        float lowestColumnX = columnPositions[lowestColumn];
+        var (lowest, highest) = GetOuterValueIndices(columnPositions);
+        float lowestColumnX = columnPositions[lowest];
 
-        MoveColumn(highestColumn, lowestColumnX - tileSize.x);
+        MoveColumn(highest, lowestColumnX - tileSize.x);
         MoveBounds(-tileSize.x, 0);
     }
 
     private void MoveLowestRowToHighest()
     {
-        var outerColumnIndices = GetOuterValueIndices(rowPositions);
-        int lowestColumn = outerColumnIndices.lowest;
-        int highestRow = outerColumnIndices.highest;
-        float highestRowX = rowPositions[highestRow];
+        var (lowest, highest) = GetOuterValueIndices(rowPositions);
+        float highestRowX = rowPositions[highest];
 
-        MoveRow(lowestColumn, highestRowX + tileSize.y);
+        MoveRow(lowest, highestRowX + tileSize.y);
         MoveBounds(0, tileSize.y);
     }
 
     private void MoveHighestRowToLowest()
     {
-        var outerColumnIndices = GetOuterValueIndices(rowPositions);
-        int highestRow = outerColumnIndices.highest;
-        int lowestRow = outerColumnIndices.lowest;
-        float lowestRowX = rowPositions[lowestRow];
+        var (lowest, highest) = GetOuterValueIndices(rowPositions);
+        float lowestRowX = rowPositions[lowest];
 
-        MoveRow(highestRow, lowestRowX - tileSize.y);
+        MoveRow(highest, lowestRowX - tileSize.y);
         MoveBounds(0, -tileSize.y);
     }
 
@@ -206,8 +198,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
             rowPositions[rowCount] = tile.transform.position.y;
 
             backgroundBounds.Encapsulate(tile.Renderer.bounds);
-        }
-        
+        }        
     }
 
     private BackgroundTile CreateTile()
