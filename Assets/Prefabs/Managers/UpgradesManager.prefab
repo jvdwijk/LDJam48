@@ -48,19 +48,19 @@ MonoBehaviour:
     type: 0
     upgradeValues:
     - cost: 100
-      statValue: 18
-      unlocked: 0
-    - cost: 500
       statValue: 25
       unlocked: 0
-    - cost: 1000
+    - cost: 300
       statValue: 30
       unlocked: 0
-    - cost: 1500
+    - cost: 1000
       statValue: 45
       unlocked: 0
     - cost: 3000
       statValue: 60
+      unlocked: 0
+    - cost: 5000
+      statValue: 80
       unlocked: 0
   - title: Turn Speed
     type: 1

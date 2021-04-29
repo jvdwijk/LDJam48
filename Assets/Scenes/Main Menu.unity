@@ -4212,6 +4212,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1743477673}
+    - target: {fileID: 4834530051561994333, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0062
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994333, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994333, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -242
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: upPosition
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: speedySpeed
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: facts.Array.size
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: facts.Array.data[31]
+      value: Hehe monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994334, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: facts.Array.data[32]
+      value: We stole this from Minecraft :)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994335, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834530051561994335, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4834530051852749812, guid: 9e4ac816900cb714b903d053af5c0727, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

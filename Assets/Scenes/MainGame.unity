@@ -892,7 +892,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2140354913422110226, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: max
-      value: 60
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 2140354913422110226, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: value
@@ -945,6 +945,10 @@ PrefabInstance:
     - target: {fileID: 8363457578987315896, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: upBorder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8363457578987315896, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
+      propertyPath: wormSpeed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8363457578987315897, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
       propertyPath: m_Layer
@@ -1797,6 +1801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4577088105230906965, guid: 8dd1a9fbcdb033448a26aa67c2eedf5d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4577088105551459421, guid: 8dd1a9fbcdb033448a26aa67c2eedf5d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2001,6 +2009,10 @@ PrefabInstance:
     - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
       propertyPath: spawningChances.Array.data[20].depthChance.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
+      propertyPath: spawningChances.Array.data[7].depthChance.Array.data[2].rate
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -489802382633184247, guid: eda9d3e79917c864ba8cf3707a0104d5, type: 3}
       propertyPath: spawningChances.Array.data[11].depthChance.Array.data[1].rate
