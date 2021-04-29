@@ -104,13 +104,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewAngle: 46.74
   viewRadius: 200
-  aroundRadius: 50
+  instantSpotRadius: 30
   target:
     serializedVersion: 2
     m_Bits: 2147483648
   drawGizmos: 1
   drawLines: 1
   drawSphere: 0
+  drawInstantSpotSphere: 1
 --- !u!50 &8978129999120511957
 Rigidbody2D:
   serializedVersion: 4
