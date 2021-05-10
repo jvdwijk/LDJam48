@@ -6,7 +6,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 {
 
     [SerializeField]
-    private BackgroundTile tilePrefab;
+    private BackgroundTileObjectPool objectPool;
 
     [SerializeField]
     private Camera cam;
@@ -167,7 +167,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
         camHeight = cam.orthographicSize * 2;
         camWidth = cam.orthographicSize * cam.aspect * 2;
 
-        tileSize = tilePrefab.GetSize();
+        tileSize = objectPool.ObjectPrefab.GetSize();
 
         backgroundGridWidth = Mathf.CeilToInt(camWidth  / tileSize.x) + 1;
         backgroundGridHeight = Mathf.CeilToInt(camHeight / tileSize.y) + 1;
@@ -203,7 +203,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 
     private BackgroundTile CreateTile()
     {
-        return Instantiate(tilePrefab);
+        return objectPool.Get();
     }
 
     private Vector2 CalculateInitialPosition(int x, int y)
