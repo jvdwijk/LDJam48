@@ -365,6 +365,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3304f429b5147494381bfd3190a9634a, type: 3}
+--- !u!1 &508964375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6963108553508931617, guid: e2767e8b864889642ac5fa46ac7c1c16, type: 3}
+  m_PrefabInstance: {fileID: 1056547837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &508964376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508964375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58c727c370548a478bcf8d88c504d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onScreenResize:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 508964378}
+        m_TargetAssemblyTypeName: OrthographicBackgroundScroller, Assembly-CSharp
+        m_MethodName: ResizeBackground
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  cam: {fileID: 1831141490}
+--- !u!114 &508964377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508964375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eb23511e0dbe348b6a3ab3f428039d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6838473265144874364, guid: bb6553e2e1af4524fa247c5b5b97e703, type: 3}
+  startAmount: 0
+--- !u!114 &508964378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6963108553508931616, guid: e2767e8b864889642ac5fa46ac7c1c16, type: 3}
+  m_PrefabInstance: {fileID: 1056547837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508964375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ffb1311aa2f8741980dfa4fa8e97b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589106154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8363457579462339249, guid: de6ea866b4033d34488f59bbf968e877, type: 3}
@@ -1074,6 +1132,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1831141490}
+    - target: {fileID: 6963108553508931616, guid: e2767e8b864889642ac5fa46ac7c1c16, type: 3}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 508964377}
     - target: {fileID: 6963108553508931616, guid: e2767e8b864889642ac5fa46ac7c1c16, type: 3}
       propertyPath: tilePrefab
       value: 

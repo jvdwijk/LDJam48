@@ -28,18 +28,17 @@ public class ScreenResizePoller : MonoBehaviour
         {
             ResetScreenSize();
             onScreenResize?.Invoke();
-            print(screenHeight);
         }
     }
 
     private bool CheckScreenSizeChaned()
     {
-        return screenHeight != cam.scaledPixelHeight || screenWidth != cam.scaledPixelWidth;
+        return screenHeight != cam.pixelHeight || screenWidth != cam.pixelWidth;
     }
 
     private void ResetScreenSize()
     {
-        screenHeight = cam.scaledPixelHeight;
-        screenWidth = cam.scaledPixelWidth;
+        screenHeight = cam.pixelHeight;
+        screenWidth = cam.pixelWidth;
     }
 }
