@@ -117,9 +117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerRange: 30
-  triggerDelay: 10
+  triggerDelay: 6
   explosionRange: 60
-  explosionDamage: 50
+  explosionDamage: 150
   timer: {fileID: 7282964662397958057}
   triggeredMine: {fileID: 21300000, guid: 5b513aa4151409640b817fe9b6b3539e, type: 3}
   mineImage: {fileID: 7282964664068457321}

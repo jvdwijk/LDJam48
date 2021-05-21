@@ -301,6 +301,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[4].upgradeValues.Array.data[0].statValue
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[4].upgradeValues.Array.data[1].statValue
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[4].upgradeValues.Array.data[2].statValue
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[4].upgradeValues.Array.data[3].statValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2766141427258862097, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
+      propertyPath: upgrades.Array.data[4].upgradeValues.Array.data[4].statValue
+      value: 1.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2766141427258862102, guid: 83c556442f3ac8544856d7a54ed09803, type: 3}
       propertyPath: m_Name
       value: UpgradesManager
