@@ -6,7 +6,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 {
 
     [SerializeField]
-    private BackgroundTile tilePrefab;
+    private BackgroundTileObjectPool objectPool;
 
     [SerializeField]
     private Camera cam;
@@ -23,7 +23,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 
     private Vector2 tileSize;
 
-    private Bounds backgroundBounds;
+    private Bounds backgroundBounds = new Bounds();
 
     private void Reset()
     {
@@ -159,7 +159,6 @@ public class OrthographicBackgroundScroller : MonoBehaviour
     private void Awake()
     {
         CreateBackground();
-
     }
 
     private void CreateBackground()//TODO: should the background be created in a seperate class?
@@ -167,7 +166,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
         camHeight = cam.orthographicSize * 2;
         camWidth = cam.orthographicSize * cam.aspect * 2;
 
-        tileSize = tilePrefab.GetSize();
+        tileSize = objectPool.ObjectPrefab.GetSize();
 
         backgroundGridWidth = Mathf.CeilToInt(camWidth  / tileSize.x) + 1;
         backgroundGridHeight = Mathf.CeilToInt(camHeight / tileSize.y) + 1;
@@ -181,6 +180,29 @@ public class OrthographicBackgroundScroller : MonoBehaviour
             CreateRow(y);
         }
         
+    }
+
+    public void ResizeBackground()
+    {
+        for (int i = 0; i < background.Length; i++)
+        {
+            objectPool.Return(background[i]);
+        }
+
+        camHeight = 0;
+        camWidth = 0;
+
+        tileSize = Vector2.zero;
+
+        backgroundGridWidth = 0;
+        backgroundGridHeight = 0;
+
+        background = new BackgroundTile[0];
+        columnPositions = new float[0];
+        rowPositions = new float[0];
+
+        backgroundBounds = new Bounds(cam.transform.position, Vector2.zero);
+        CreateBackground();
     }
 
     private void CreateRow(int rowCount)
@@ -203,7 +225,7 @@ public class OrthographicBackgroundScroller : MonoBehaviour
 
     private BackgroundTile CreateTile()
     {
-        return Instantiate(tilePrefab);
+        return objectPool.Get();
     }
 
     private Vector2 CalculateInitialPosition(int x, int y)
@@ -212,6 +234,11 @@ public class OrthographicBackgroundScroller : MonoBehaviour
         position.x = cam.transform.position.x - camWidth / 2 + tileSize.x * x;
         position.y = cam.transform.position.y - camHeight / 2 + tileSize.y * y;
         return position;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(backgroundBounds.center, backgroundBounds.size);
     }
 
 }
