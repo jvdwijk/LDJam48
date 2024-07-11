@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class SkinStore : MonoBehaviour
 {
 
@@ -21,6 +21,9 @@ public class SkinStore : MonoBehaviour
 
     [SerializeField]
     private int current;
+
+    [SerializeField]
+    private Button prevButton, nextButton, selectButton, buyButton;
 
     void Start()
     {
@@ -72,12 +75,29 @@ public class SkinStore : MonoBehaviour
         {
             seller.Disable();
             selector.SetSkin(skins[current]);
+
+            SetNavigationOptions(selectButton);
         }
         else
         {
             selector.Disable();
             seller.SetSkin(skins[current]);
+
+            SetNavigationOptions(buyButton);
         }
+    }
+
+    private void SetNavigationOptions(Button newNavTarget)
+    {
+        Navigation navigation = prevButton.navigation;
+        navigation.selectOnRight = newNavTarget;
+        navigation.selectOnDown = newNavTarget;
+        prevButton.navigation = navigation;
+
+        navigation = nextButton.navigation;
+        navigation.selectOnLeft = newNavTarget;
+        navigation.selectOnUp = newNavTarget;
+        nextButton.navigation = navigation;
     }
     
 }

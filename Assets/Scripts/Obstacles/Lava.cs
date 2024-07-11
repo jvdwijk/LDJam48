@@ -5,7 +5,7 @@ using UnityEngine;
 public class Lava : MonoBehaviour
 {
     [SerializeField]
-    private float damageRadius = 15, damageRate = 3, impactDamage = Mathf.Infinity;
+    private float damageRadius = 15, damageRate = 3, impactDamage = 5000;
     
     void Update()
     {
