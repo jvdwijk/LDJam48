@@ -1,22 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnThings : MonoBehaviour
 {
     [SerializeField]
     private SpawnPool spawnPool;
     public SpawningChance[] spawningChances;
-    public float spawnDistance;
+    public float spawnDistanceOffset;
 
     public float spawnChanceMultiplier = 1;
 
     public GameObject wormHead;
 
-    private void Start()
-    {
-        
-    }
+    [SerializeField, Range(0f, 360f), Tooltip("The field in front of the head in which the items spawn.")]
+    private float spawnAngle = 180;
+
+    [SerializeField, Range(0f, 360f), Tooltip("The offset by which to rotate the field in which items spawn")]
+    private float spawnAngleOffset = 90;
+
+    [SerializeField]
+    private float despawnDistance = 1;
+
+    [SerializeField]
+    private bool showGizmos = false;
+
+    private float cameraSizeCache, cameraAspectCache, viewportCornerDistanceCache;
 
     private void Update()
     {
@@ -41,16 +50,47 @@ public class SpawnThings : MonoBehaviour
     public void Spawn(GameObject prefab) //spawns things in a half circle in front of the worm head at spawnDistance
     {
         GameObject obj = spawnPool.PullObject(prefab);
-        
-        float ang = -wormHead.transform.eulerAngles.z + Random.value * 180 + 90;
-        Vector3 pos;
-        pos.x = wormHead.transform.position.x + spawnDistance * Mathf.Sin(ang * Mathf.Deg2Rad);
-        pos.y = wormHead.transform.position.y + spawnDistance * Mathf.Cos(ang * Mathf.Deg2Rad);
-        pos.z = 0;
-        obj.transform.position = pos;
-
+        float spawnDistance = GetSpawnDistance();
+        obj.transform.position = GetRandomSpawnLocation(spawnDistance);
         Despawn despawn = obj.GetComponent<Despawn>();
-        despawn.despawnDistance = spawnDistance + 1;
+        despawn.despawnDistance = spawnDistance + despawnDistance;
         despawn.wormHead = wormHead;
+    }
+
+    private Vector3 GetRandomSpawnLocation(float spawnDistance){
+        var camera = Camera.main;
+        float ang = -wormHead.transform.eulerAngles.z + Random.value * spawnAngle + spawnAngleOffset;
+        return new Vector3(
+            camera.transform.position.x + spawnDistance * Mathf.Sin(ang * Mathf.Deg2Rad),
+            camera.transform.position.y + spawnDistance * Mathf.Cos(ang * Mathf.Deg2Rad),
+            0
+        );
+    }
+
+    private float GetSpawnDistance() {
+        return GetDistanceToViewportCorner() + spawnDistanceOffset;
+    }
+
+    private float GetDistanceToViewportCorner() {
+        var camera = Camera.main;
+        if(cameraAspectCache == camera.aspect && cameraSizeCache == camera.orthographicSize)
+            return viewportCornerDistanceCache;
+
+        cameraAspectCache = camera.aspect;
+        cameraSizeCache = camera.orthographicSize;
+        var verticalSize = cameraSizeCache;
+        var horizontalSize = cameraAspectCache * cameraSizeCache;
+        viewportCornerDistanceCache = Mathf.Sqrt(verticalSize * verticalSize + horizontalSize * horizontalSize);
+        return viewportCornerDistanceCache;
+    }
+
+    private void OnDrawGizmos() {
+        if(!showGizmos)
+            return;
+
+        var camera = Camera.main;
+        var spawnDistance = GetSpawnDistance();
+        Gizmos.DrawWireSphere(camera.transform.position, spawnDistance);
+        //Some Gizmo for showing the spawning field might be nice.
     }
 }
