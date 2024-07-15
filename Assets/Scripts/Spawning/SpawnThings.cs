@@ -7,7 +7,9 @@ public class SpawnThings : MonoBehaviour
     [SerializeField]
     private SpawnPool spawnPool;
     public SpawningChance[] spawningChances;
-    public float spawnDistance;
+    
+    [SerializeField]
+    private float spawnDistance, despawnDistance;
 
     public float spawnChanceMultiplier = 1;
 
@@ -50,7 +52,7 @@ public class SpawnThings : MonoBehaviour
         obj.transform.position = pos;
 
         Despawn despawn = obj.GetComponent<Despawn>();
-        despawn.despawnDistance = spawnDistance + 1;
+        despawn.despawnDistance = despawnDistance;
         despawn.wormHead = wormHead;
     }
 }
