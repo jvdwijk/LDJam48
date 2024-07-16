@@ -6,16 +6,22 @@ using UnityEngine.EventSystems;
 public class UIControllerManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject firstSelected;
+    protected GameObject firstSelected;
 
     private void Awake()
     {
-        firstSelected = EventSystem.current.currentSelectedGameObject;
+        if(firstSelected == null)
+        {
+            firstSelected = EventSystem.current.currentSelectedGameObject;
+        }
     }
 
     public void SetSelectedUIObject(GameObject newSelected)
     {
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(newSelected);
+        if (newSelected != null)
+        {
+            EventSystem.current.SetSelectedGameObject(newSelected);
+        }
     }
 }

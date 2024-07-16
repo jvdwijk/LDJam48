@@ -581,7 +581,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 6236589815166901592}
+    m_SelectOnDown: {fileID: 699867536859921285}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 7758198551045069610}
   m_Transition: 1
@@ -2616,6 +2616,26 @@ PrefabInstance:
       propertyPath: m_ChildControlHeight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7968569209593674306, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968569209593674306, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 5873724943311031126}
+    - target: {fileID: 7968569209593674306, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 6236589815166901592}
+    - target: {fileID: 7968569209593674306, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 5873724943311031126}
+    - target: {fileID: 7968569209593674306, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 7758198551045069610}
     - target: {fileID: 8259216474697265661, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -2717,6 +2737,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+--- !u!114 &699867536859921285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7968569209593674306, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}
+  m_PrefabInstance: {fileID: 7431052269882098119}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2240861135714931028 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8663032322241237139, guid: ea6d0c516f720244294c2db8e6fe0c7f, type: 3}

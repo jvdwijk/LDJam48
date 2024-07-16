@@ -9,7 +9,8 @@ public class SpawnThings : MonoBehaviour
     [SerializeField]
     private SpawningChance[] spawningChances;
     
-    public float spawnDistanceOffset;
+    [SerializeField]
+    private float spawnDistanceOffset = 5;
 
     public float spawnChanceMultiplier = 1;
 

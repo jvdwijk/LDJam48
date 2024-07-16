@@ -9,10 +9,30 @@ public class LoadManager : MonoBehaviour
     [SerializeField]
     private ImageFade imageFade;
 
+    private static LoadManager instance;
+    public static LoadManager Instance => GetInstance();
+
     private bool isUsed = false;
+
+    private static LoadManager GetInstance()
+    {
+        if (instance == null)
+        {
+            var gobj = new GameObject("Generated Load Manager");
+            instance = gobj.AddComponent<LoadManager>();
+        }
+        return instance;
+    }
 
     private void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -41,6 +61,4 @@ public class LoadManager : MonoBehaviour
 
         });
     }
-
-
 }
