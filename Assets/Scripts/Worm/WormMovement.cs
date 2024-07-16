@@ -72,8 +72,11 @@ public class WormMovement : MonoBehaviour
         float horizontalAxis = Input.GetAxis("Horizontal");
         if (horizontalAxis != 0)
         {
-            float currentRotation = transform.localRotation.z;
-
+            var rotation = -horizontalAxis * rotateSpeed * Time.deltaTime;
+            var inverseMovement = PlayerPrefs.GetInt(PlayerPrefKeys.INVERSE_MOVEMENT, 0) != 0;
+            if(inverseMovement){
+                rotation *= -1;
+            }
             transform.Rotate(0, 0, -horizontalAxis * rotateSpeed * Time.deltaTime);
         }
     }
