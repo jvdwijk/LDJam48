@@ -77,7 +77,7 @@ public class WormMovement : MonoBehaviour
             if(inverseMovement){
                 rotation *= -1;
             }
-            transform.Rotate(0, 0, -horizontalAxis * rotateSpeed * Time.deltaTime);
+            transform.Rotate(0, 0, rotation);
         }
     }
 
