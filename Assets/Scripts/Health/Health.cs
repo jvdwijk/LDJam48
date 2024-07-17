@@ -8,8 +8,15 @@ public class UnityFloatEvent : UnityEvent<float>{}
 
 public class Health : MonoBehaviour
 {
-    public UnityEvent OnDie;
-    public UnityFloatEvent OnChange;
+    [SerializeField]
+    private string sceneToDieFor = "ScoreScreen";
+
+    [SerializeField]
+    private UnityEvent OnDie;
+   
+    [SerializeField]
+    private UnityFloatEvent OnChange;
+
 
     [SerializeField]
     private float value, max = 100;
@@ -45,7 +52,13 @@ public class Health : MonoBehaviour
 
         if (value < 0)
         {
-            OnDie.Invoke();
+            JimGoDie();
         }
+    }
+
+    private void JimGoDie()
+    {
+        OnDie?.Invoke();
+        LoadManager.Instance.LoadScene(sceneToDieFor);
     }
 }

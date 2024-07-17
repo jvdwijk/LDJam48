@@ -80,10 +80,13 @@ public class BodyManager : MonoBehaviour
 
     private void RemovePart()
     {
-        
         tail.SetUpFollow(middleParts.Count > 1 ? 
             middleParts[middleParts.Count - 2].transform : head.transform);
 
+        if (middleParts.Count < 1)
+        {
+            return;
+        }
         BodyMovement removedPart = middleParts[middleParts.Count - 1];
         middleParts.Remove(middleParts[middleParts.Count - 1]);
         Destroy(removedPart.gameObject);

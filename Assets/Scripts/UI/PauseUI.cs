@@ -15,6 +15,9 @@ public class PauseUI : UIControllerManager
     [SerializeField]
     private string mainMenuSceneName = "Main Menu";
 
+    [SerializeField]
+    private string shopSceneName = "ScoreScreen";
+
     private float currentTimescale;
 
 
@@ -47,5 +50,11 @@ public class PauseUI : UIControllerManager
     {
         Time.timeScale = 1f;
         LoadManager.Instance.LoadScene(mainMenuSceneName);
+    }
+
+    public void ToShop()
+    {
+        Time.timeScale = 1f;
+        LoadManager.Instance.LoadScene(shopSceneName);
     }
 }

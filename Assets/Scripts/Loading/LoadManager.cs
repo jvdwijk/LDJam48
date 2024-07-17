@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LoadManager : MonoBehaviour
 {
-
     [SerializeField]
     private ImageFade imageFade;
 
@@ -20,13 +19,14 @@ public class LoadManager : MonoBehaviour
         {
             var gobj = new GameObject("Generated Load Manager");
             instance = gobj.AddComponent<LoadManager>();
+            DontDestroyOnLoad(instance);
         }
         return instance;
     }
 
     private void Awake()
     {
-        if (instance != null)
+        if (instance != null && instance != gameObject)
         {
             Destroy(gameObject);
             return;
@@ -57,8 +57,8 @@ public class LoadManager : MonoBehaviour
             return;
         imageFade.SetTarget(0, (reached) => {
 
-            Destroy(gameObject);
-
+            //Destroy(gameObject);
+            isUsed = false;
         });
     }
 }
